@@ -104,61 +104,6 @@ h1 .a{color:var(--accent)}
 }
 }
 }
-/* ZIP check */
-.zip{max-width:640px;margin:30px auto 0;text-align:center}
-.zip h2,.sec-h{font-family:'Poppins',system-ui,sans-serif;font-weight:600;font-size:clamp(22px,2.6vw,30px);line-height:1.2;margin:0 0 8px}
-.zip p.lead,.sec-lead{font-size:16px;color:var(--body);margin:0 0 16px}
-.zipform{display:flex;gap:10px;justify-content:center}
-.zipform input{font:600 20px 'Barlow',sans-serif;padding:14px 16px;border:2px solid var(--line);border-radius:10px;width:200px;text-align:center;letter-spacing:.08em}
-.zipform input:focus{outline:none;border-color:var(--ink)}
-.zipform button{font:700 17px 'Barlow',sans-serif;padding:14px 22px;border:0;border-radius:10px;background:var(--ink);color:#fff;cursor:pointer}
-.zipres{margin-top:16px;padding:16px 18px;border-radius:12px;font-size:17px;line-height:1.45;display:none;text-align:left}
-.zipres.open{display:block;background:#EAF6EC;border:1px solid #BFE3C6}
-.zipres.taken{display:block;background:#FDECEB;border:1px solid #F5C6C3}
-.zipres.err{display:block;background:#F4F2EC;border:1px solid var(--line)}
-.zipres b{font-size:19px}
-.zipres a{color:var(--accent);font-weight:700}
-
-/* Example brief */
-.brief-sec,.calc-sec{border-top:1px solid var(--line);padding:38px 0 34px;text-align:center}
-.brief{max-width:860px;margin:18px auto 0;text-align:left;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.06)}
-.brief-top{background:var(--bar);color:#fff;padding:14px 20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:15px}
-.brief-top b{font-family:'Poppins',sans-serif;font-weight:500}
-.tag{background:var(--accent);color:#fff;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.brief-body{display:grid;grid-template-columns:1.1fr 1fr;gap:0}
-.brief-photo{position:relative;background:#f4f2ec}
-.brief-photo img{display:block;width:100%;height:100%;object-fit:cover}
-.brief-photo span{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;font-size:12px;padding:4px 8px;border-radius:6px}
-.brief-rows{padding:8px 20px 14px}
-.row{display:grid;grid-template-columns:118px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.4}
-.row:last-child{border-bottom:0}
-.row .k{color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:2px}
-.row .v{color:var(--ink);font-weight:600}
-.ok{color:#1E8E3E;font-weight:700}
-.brief-note{font-size:13px;color:var(--muted);margin-top:12px}
-
-/* Calculator */
-.calc{max-width:860px;margin:18px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left}
-.calc-in,.calc-out{border:1px solid var(--line);border-radius:14px;padding:20px}
-.calc-in label{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
-.calc-in .fld{margin-bottom:16px}
-.calc-in input[type=number]{font:600 20px 'Barlow',sans-serif;width:100%;padding:10px 12px;border:2px solid var(--line);border-radius:10px}
-.calc-in input:focus{outline:none;border-color:var(--ink)}
-.calc-out{background:var(--bar);color:#fff}
-.big{font-family:'Poppins',sans-serif;font-size:44px;font-weight:600;line-height:1.05;margin:2px 0 4px}
-.big.a{color:#FF6A62}
-.olbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#B9B4A8}
-.orow{display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.14);padding:10px 0;font-size:16px}
-.orow b{font-weight:700}
-.calc-fine{font-size:13px;color:#B9B4A8;margin-top:10px;line-height:1.4}
-@media (max-width:720px){
-  .brief-body{grid-template-columns:1fr}
-  .brief-photo img{height:auto}
-  .row{grid-template-columns:96px 1fr}
-  .calc{grid-template-columns:1fr}
-  .zipform{flex-direction:column;align-items:stretch}
-  .zipform input{width:100%}
-}
 .back{display:inline-block;padding:14px 22px;border-radius:8px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none}
 footer{border-top:1px solid var(--line);padding:18px 20px 28px;text-align:center;font-size:13px;color:var(--muted)}
 footer a{color:var(--muted)}
@@ -174,17 +119,6 @@ footer a{color:var(--muted)}
     <h1>$225 Per Shown Bath Appointment. <span class="a">Bad Sit? You Don't Pay. You Be the Judge.</span></h1>
     <div class="rule" role="presentation"></div>
     <p class="sub">We pay the ad spend. Both homeowners at the table, budget, timeline and scope confirmed, and a brief on every appointment. <span class="a">We launch the same day you sign. Your first appointment can be on the calendar tomorrow.</span> Have your own call center? We plug straight into it. The same system that's generated <span class="a">over $8.2M</span> for our clients this year.</p>
-  </section>
-
-
-  <section class="zip" id="zip">
-    <h2>Is your area still open?</h2>
-    <p class="lead">One bath remodeler per market. Enter your ZIP code to check.</p>
-    <form class="zipform" id="zipform">
-      <input id="zipin" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="ZIP code" aria-label="ZIP code" required>
-      <button type="submit">Check my area</button>
-    </form>
-    <div class="zipres" id="zipres" role="status" aria-live="polite"></div>
   </section>
 
   <section class="scheduler" id="check">
@@ -207,50 +141,6 @@ footer a{color:var(--muted)}
     <div class="fact"><span class="lbl">Every appointment we send you</span><span class="val">Both homeowners home. Budget, timeline and scope confirmed. A brief with photos of the bathroom, rough measurements and notes. Exclusive to you.</span></div>
     <div class="fact"><span class="lbl">What you pay</span><span class="val">$225 per shown appointment. $0 ad spend. $0 retainer. No-shows are free. Bad sit? Flag it within 48 hours and you don't pay.</span></div>
     <div class="fact"><span class="lbl">Who this is for</span><span class="val">Bath remodelers doing $1M+ a year with an in-home sales process.</span></div>
-  </section>
-
-  <section class="brief-sec">
-    <h2 class="sec-h">What lands on your calendar</h2>
-    <p class="sec-lead">Every appointment comes with a brief like this, before your rep ever knocks.</p>
-    <div class="brief">
-      <div class="brief-top"><b>Appointment brief &middot; Tue 6:30 PM</b><span class="tag">Example</span></div>
-      <div class="brief-body">
-        <div class="brief-photo"><img src="/example-brief-before.jpg" alt="Homeowner's photo of their current bathroom: dated tub with sliding glass doors" loading="lazy"><span>Homeowner photo 1 of 3</span></div>
-        <div class="brief-rows">
-          <div class="row"><span class="k">Who's home</span><span class="v">Both homeowners <span class="ok">&#10003; confirmed</span></span></div>
-          <div class="row"><span class="k">Project</span><span class="v">Tub-to-shower conversion, hall bath</span></div>
-          <div class="row"><span class="k">Current</span><span class="v">1990s fiberglass tub, sliding doors, cracked tile</span></div>
-          <div class="row"><span class="k">Measurements</span><span class="v">Alcove approx. 60&Prime; &times; 32&Prime;, 8 ft ceiling</span></div>
-          <div class="row"><span class="k">Budget</span><span class="v">$14k&ndash;$18k <span class="ok">&#10003; confirmed</span>, open to financing</span></div>
-          <div class="row"><span class="k">Timeline</span><span class="v">Wants it done before the holidays</span></div>
-          <div class="row"><span class="k">Why now</span><span class="v">Getting in and out of the tub is getting hard</span></div>
-          <div class="row"><span class="k">Confirmed</span><span class="v">Call 24 hrs before + text 2 hrs before</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="brief-note">Example brief. Names and address withheld. Yours come with the homeowner's real photos and details.</div>
-  </section>
-
-  <section class="calc-sec">
-    <h2 class="sec-h">What it does to your cost per sale</h2>
-    <p class="sec-lead">Put in your own numbers. You only pay for appointments that show and aren't bad sits.</p>
-    <div class="calc">
-      <div class="calc-in">
-        <div class="fld"><label for="c-ticket">Average job size ($)</label><input id="c-ticket" type="number" min="1000" step="500" value="14000"></div>
-        <div class="fld"><label for="c-close">Your close rate (%)</label><input id="c-close" type="number" min="1" max="100" step="1" value="30"></div>
-        <div class="fld"><label for="c-appts">Shown appointments per month</label><input id="c-appts" type="number" min="1" step="1" value="20"></div>
-      </div>
-      <div class="calc-out" aria-live="polite">
-        <div class="olbl">Marketing cost as % of sales</div>
-        <div class="big a" id="o-pct">&ndash;</div>
-        <div class="olbl">Cost per sold job</div>
-        <div class="big" id="o-cps">&ndash;</div>
-        <div class="orow"><span>Jobs sold per month</span><b id="o-jobs">&ndash;</b></div>
-        <div class="orow"><span>New sales per month</span><b id="o-rev">&ndash;</b></div>
-        <div class="orow"><span>You pay us per month</span><b id="o-cost">&ndash;</b></div>
-        <div class="calc-fine">$225 per shown appointment. $0 ad spend. No-shows and bad sits are free, so they're not in the math.</div>
-      </div>
-    </div>
   </section>
 
   <!-- Proof, for the reader who scrolled past the form. Swap the logo file names for the ones on your main site. -->
@@ -352,39 +242,5 @@ footer a{color:var(--muted)}
 
 <footer>BuildSignals · (213) 449-7226 · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></footer>
 
-<script>
-/* ZIP check: taken = within an active client's protected area. Keep in sync with the ad set exclusions. */
-(function(){
-  var TAKEN=[[38.2494,-122.0400,50],[38.2546,-121.2999,50],[37.6819,-121.768,50],[37.7974,-121.2161,50],[38.5805,-121.5302,50],[38.6785,-121.2258,30],[39.1404,-121.6169,40],[39.7285,-121.8375,30],[38.8966,-121.0769,40],[38.9399,-119.9772,25],[38.4404,-122.7141,35],[37.8044,-122.2712,30],[37.6391,-120.9969,30],[38.5816,-121.4944,50],[34.05,-118.25,45],[34.6868,-118.1542,25],[41.4993,-81.6944,45],[40.2153,-82.8799,30],[26.7153,-80.0534,35],[27.9506,-82.4572,40],[28.2442,-82.7193,30],[28.0395,-81.9498,35],[27.4989,-82.5748,30],[27.3364,-82.5307,30],[27.0998,-82.4543,20]];
-  function miles(a,b,c,d){var R=3958.8,r=Math.PI/180,x=(c-a)*r,y=(d-b)*r,h=Math.sin(x/2)*Math.sin(x/2)+Math.cos(a*r)*Math.cos(c*r)*Math.sin(y/2)*Math.sin(y/2);return 2*R*Math.asin(Math.sqrt(h));}
-  var f=document.getElementById('zipform'),inp=document.getElementById('zipin'),out=document.getElementById('zipres');
-  function show(cls,html){out.className='zipres '+cls;out.innerHTML=html;}
-  f.addEventListener('submit',function(e){
-    e.preventDefault();var z=(inp.value||'').replace(/\D/g,'');
-    if(z.length!==5){show('err','Enter a 5-digit US ZIP code.');return;}
-    show('err','Checking '+z+'&hellip;');
-    fetch('https://api.zippopotam.us/us/'+z).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
-      var p=d.places[0],lat=+p.latitude,lng=+p.longitude,place=p['place name']+', '+p['state abbreviation'];
-      var taken=TAKEN.some(function(t){return miles(lat,lng,t[0],t[1])<=t[2];});
-      if(window.fbq)fbq('trackCustom','ZipCheck',{result:taken?'taken':'open'});
-      if(taken){show('taken','<b>'+place+' is taken.</b><br>We already have a bath remodeler there. Book a call anyway and you\'re first in line if it opens, or for the next area over.');}
-      else{show('open','<b>'+place+' is open.</b><br>It stays open until one bath remodeler claims it. <a href="#check">Book your area check below &darr;</a>');}
-    }).catch(function(){show('err','We couldn\'t find that ZIP. Check it, or just book a call below and we\'ll check it for you.');});
-  });
-})();
-/* Cost-per-sale calculator */
-(function(){
-  var $=function(i){return document.getElementById(i);},fmt=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
-  function calc(){
-    var t=+$('c-ticket').value||0,c=(+$('c-close').value||0)/100,a=+$('c-appts').value||0;
-    var jobs=a*c,rev=jobs*t,cost=a*225;
-    $('o-jobs').textContent=jobs?(Math.round(jobs*10)/10):'0';
-    $('o-rev').textContent=fmt(rev);$('o-cost').textContent=fmt(cost);
-    $('o-cps').textContent=jobs?fmt(cost/jobs):'–';
-    $('o-pct').textContent=rev?(Math.round(cost/rev*1000)/10)+'%':'–';
-  }
-  ['c-ticket','c-close','c-appts'].forEach(function(i){$(i).addEventListener('input',calc);});calc();
-})();
-</script>
 </body>
 </html>
