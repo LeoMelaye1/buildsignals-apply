@@ -118,8 +118,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
     <p class="lbl">What happens on the call</p>
     <ol class="steps">
       <li><span class="num">1</span><span>A quick <b>15 minutes, one on one</b>. No slide deck and no pressure.</span></li>
-      <li><span class="num">2</span><span>We check whether <b>your area is still open</b>. We only work with one bathroom remodeler per area.</span></li>
-      <li><span class="num">3</span><span>If it is a fit, we set up your <b>free 2-week trial</b>. After that you pick: pay per appointment or pay per close.</span></li>
+      <li><span class="num">2</span><span id="ty-step2">We check whether <b>your area is still open</b>. We only work with one bath remodeler per area.</span></li>
+      <li><span class="num">3</span><span id="ty-step3">If it is a fit, we launch: <b>$225 per sat appointment</b>, we pay the ad spend, and if it's a bad sit you don't pay.</span></li>
     </ol>
   </section>
 
@@ -186,5 +186,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
 
 <footer>BuildSignals &middot; (213) 449-7226 &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a></footer>
 
+<script>
+  // Booked from the LA offer (apply.buildsignals.com/la)? Swap in the LA terms.
+  (function(){
+    var q = (location.search + ' ' + document.referrer).toLowerCase();
+    if (q.indexOf('la2wkfree') === -1) return;
+    document.getElementById('ty-step2').innerHTML = 'We check whether <b>one of the 5 LA spots is still open</b> for you.';
+    document.getElementById('ty-step3').innerHTML = 'If it is a fit, your <b>first 2 weeks are free</b>: you cover the ad spend, and if you don\'t sign $25k from our appointments we refund it. After that, pay per close if you like us.';
+  })();
+</script>
 </body>
 </html>
