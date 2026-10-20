@@ -143,20 +143,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
   </section>
 
   <section class="scheduler" id="check">
-    <p class="claim">2 quick questions, then <span class="a">book your 15-minute call.</span></p>
+    <p class="claim">15-minute call. <span class="a">Book below.</span></p>
     <!-- iClosed inline widget begin -->
-    <div class="qual" id="qual">
-      <p class="q">What's your company's yearly revenue?</p>
-      <div class="opts" data-q="revenue">
-        <button type="button" data-v="under500k">Under $500K</button><button type="button" data-v="500k-1m">$500K to $1M</button><button type="button" data-v="1m-3m">$1M to $3M</button><button type="button" data-v="3m-plus">$3M+</button>
-      </div>
-      <p class="q">Do you (or a sales rep) run in-home estimates?</p>
-      <div class="opts" data-q="inhome">
-        <button type="button" data-v="yes">Yes</button><button type="button" data-v="no">No</button>
-      </div>
-    </div>
-    <div class="nofit" id="nofit" hidden>Thanks for checking. Right now this program is only for bath companies doing <b>$1M+ a year</b> with an in-home sales process. When you get there, come back and we'll talk.</div>
-    <div class="slot" data-slot></div>
+    <div class="iclosed-widget" data-url="https://app.iclosed.io/e/buildsignals/strategy-call" title="Strategy call" style="width: 100%; height: 620px"></div>
     <!-- iClosed inline widget end -->
   </section>
 
@@ -278,52 +267,20 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
 
   <section class="scheduler" id="book2">
     <p class="claim">Ready? <span class="a">Grab your 15-minute call.</span></p>
-    <div class="slot" data-slot></div>
-    <a class="back gate-jump" href="#check">Answer 2 quick questions to book</a>
+    <div class="iclosed-widget" data-url="https://app.iclosed.io/e/buildsignals/strategy-call" title="Strategy call" style="width: 100%; height: 620px"></div>
   </section>
 </main>
 
 <footer>BuildSignals · (213) 449-7226 · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></footer>
 <script>
-// Qualify before booking: only $1M+ bath companies with in-home sales see the calendar.
+// Pass the ad's UTMs into every calendar on the page.
 (function(){
-  var answers={}, done=false;
-  var URL='https://app.iclosed.io/e/buildsignals/strategy-call';
-  function track(name){ try{ fbq('trackCustom', name, answers); }catch(e){} }
-  function showCalendars(){
-    if(done) return; done=true;
-    var qs=window.location.search.slice(1);
-    var extra='revenue='+encodeURIComponent(answers.revenue)+'&inhome='+answers.inhome;
-    var url=URL+'?'+(qs?qs+'&':'')+extra;
-    document.querySelectorAll('[data-slot]').forEach(function(slot){
-      var w=document.createElement('div');
-      w.className='iclosed-widget'; w.setAttribute('data-url',url); w.title='Strategy call';
-      w.style.width='100%'; w.style.height='620px';
-      slot.appendChild(w);
-    });
-    document.querySelectorAll('.gate-jump').forEach(function(a){ a.hidden=true; });
-    var sc=document.createElement('script'); sc.src='https://app.iclosed.io/assets/widget.js'; sc.async=true; document.body.appendChild(sc);
-  }
-  function check(){
-    if(!answers.revenue || !answers.inhome) return;
-    var big = answers.revenue==='1m-3m' || answers.revenue==='3m-plus';
-    if(big && answers.inhome==='yes'){
-      document.getElementById('nofit').hidden=true;
-      document.getElementById('qual').hidden=true;
-      track('QualifiedPPC'); showCalendars();
-    } else {
-      document.getElementById('nofit').hidden=false;
-      track('NotQualifiedPPC');
-    }
-  }
-  document.querySelectorAll('.opts').forEach(function(g){
-    g.addEventListener('click',function(e){
-      var b=e.target.closest('button'); if(!b) return;
-      g.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
-      b.classList.add('on'); answers[g.getAttribute('data-q')]=b.getAttribute('data-v'); check();
-    });
+  var qs=window.location.search; if(!qs||qs.length<2) return;
+  document.querySelectorAll('.iclosed-widget[data-url]').forEach(function(el){
+    var u=el.getAttribute('data-url'); el.setAttribute('data-url', u.indexOf('?')>-1 ? u+'&'+qs.slice(1) : u+qs);
   });
 })();
 </script>
+<script type="text/javascript" src="https://app.iclosed.io/assets/widget.js" async></script>
 </body>
 </html>
