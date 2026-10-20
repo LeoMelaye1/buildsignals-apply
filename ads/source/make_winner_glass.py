@@ -49,4 +49,8 @@ make(["Bath Remodelers", "$100K In 2 Months"],
      ["$100K IN NEW JOBS", "IN 2 MONTHS"],
      ["OR YOUR 10% FEE BACK", "WE RUN YOUR ADS + BOOK THE CALLS", "YOU JUST SHOW UP + SELL"],
      "../simple-ladder-glass.jpg")
+make(["Pay Per Close", "Bath Remodelers $1M+"],
+     ["YOU ONLY PAY", "WHEN IT CLOSES"],
+     ["WE RUN YOUR ADS", "WE CALL + BOOK EVERY LEAD", "YOU JUST SHOW UP + SELL"],
+     "../simple-ppc-glass.jpg")
 print("ok")
