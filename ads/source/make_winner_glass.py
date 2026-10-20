@@ -41,12 +41,12 @@ def make(pills, big, small, out):
     im.convert("RGB").save(out, quality=92)
 
 
-make(["Pay Per Close", "Bath Remodelers $1M+"],
+if False: make(["Pay Per Close", "Bath Remodelers $1M+"],
      ["PAY PER CLOSE", "$1K/MO + 5%"],
      ["NO SETUP FEE. NO CONTRACT.", "WE SHOOT + RUN YOUR ADS", "WE CALL + BOOK EVERY LEAD", "MONTH 1 PAYS OFF OR IT'S FREE"],
      "../ppc1-winnerglass-1k5.jpg")
 make(["Pick Your Number", "Bath Remodelers $1M+"],
-     ["PICK YOUR NUMBER", "PAY 10%. ONCE."],
-     ["CLOSE $50K. PAY $5K.", "CLOSE $100K. PAY $10K.", "NO RETAINER. NO CONTRACT.", "WE DON'T STOP TILL YOU HIT IT"],
-     "../ppc2-winnerglass-ladder.jpg")
+     ["WE GET YOU $100K", "IN CLOSED JOBS"],
+     ["YOU PAY 10% ($10K). ONCE.", "OR PICK $50K, $250K, ANY NUMBER", "WE SHOOT ADS, CALL + BOOK LEADS", "WE DON'T STOP TILL YOU HIT IT"],
+     "../ppc2-winnerglass-ladder-v2.jpg")
 print("ok")
