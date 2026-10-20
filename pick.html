@@ -153,15 +153,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
     <p class="claim">15-minute call. <span class="a">Book below.</span></p>
     <!-- iClosed inline widget begin -->
     <div class="iclosed-widget" data-url="https://app.iclosed.io/e/buildsignals/strategy-call" title="Strategy call" style="width: 100%; height: 620px"></div>
-    <!-- Optional: passes the ad's UTM parameters into the scheduler so each booking shows its campaign. Runs before the widget loads. Delete this one script tag if you want the embed untouched. -->
-    <script>
-    (function(){
-      var qs=window.location.search; if(!qs||qs.length<2) return;
-      var el=document.querySelector('.iclosed-widget[data-url]'); if(!el) return;
-      var u=el.getAttribute('data-url'); el.setAttribute('data-url', u.indexOf('?')>-1 ? u+'&'+qs.slice(1) : u+qs);
-    })();
-    </script>
-    <script type="text/javascript" src="https://app.iclosed.io/assets/widget.js" async></script>
     <!-- iClosed inline widget end -->
   </section>
 
@@ -173,19 +164,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
     <div class="fact"><span class="lbl">Who this is for</span><span class="val">Bath remodelers doing $1M+ a year, with someone who can run an in-home estimate and room for more jobs.</span></div>
   </section>
 
-  <section class="how">
-    <h2 class="proof-h">Why pick your number?</h2>
-    <p class="how-sub">Most agencies sell you a monthly fee and hope. We start with the number you want to close and work backwards. You pay once, and we don't stop until you've hit it.</p>
-    <div class="cmp">
-      <div class="col bad"><div class="ch">Typical agency</div><ul><li>$3k to $5k a month retainer</li><li>Setup fees and 6 to 12 month contracts</li><li>You shoot your own content</li><li>Leads dumped in your inbox</li><li>Nobody follows up after the estimate</li></ul></div>
-      <div class="col good"><div class="ch">BuildSignals</div><ul><li>Pay 10% of your target, once</li><li>We keep going until you hit it</li><li>We script, shoot and edit your ads</li><li>We call every lead and book the appointment</li><li>We follow up after your estimate to help you close</li></ul></div>
-    </div>
-    <ol class="stepsx">
-      <li><b>Book a 15-minute call.</b> We look at your close rate, your average job and your capacity, and help you pick a number you can actually hit.</li>
-      <li><b>We shoot and launch.</b> We script your ads, film them with you, edit them and go live.</li>
-      <li><b>We book, you sell.</b> Every lead is called fast, qualified and booked on your calendar. After your estimate, we follow up until it closes or it's a clear no.</li>
-    </ol>
-  </section>
+
 
   <!-- Proof, for the reader who scrolled past the form. Swap the logo file names for the ones on your main site. -->
   <section class="proof">
@@ -280,11 +259,38 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
 
     </div>
     <div class="reviews">★★★★★ 23 five-star reviews on Google</div>
-    <a class="back" href="#check">Book your call</a>
+  </section>
+  <section class="how">
+    <h2 class="proof-h">Why pick your number?</h2>
+    <p class="how-sub">Most agencies sell you a monthly fee and hope. We start with the number you want to close and work backwards. You pay once, and we don't stop until you've hit it.</p>
+    <div class="cmp">
+      <div class="col bad"><div class="ch">Typical agency</div><ul><li>$3k to $5k a month retainer</li><li>Setup fees and 6 to 12 month contracts</li><li>You shoot your own content</li><li>Leads dumped in your inbox</li><li>Nobody follows up after the estimate</li></ul></div>
+      <div class="col good"><div class="ch">BuildSignals</div><ul><li>Pay 10% of your target, once</li><li>We keep going until you hit it</li><li>We script, shoot and edit your ads</li><li>We call every lead and book the appointment</li><li>We follow up after your estimate to help you close</li></ul></div>
+    </div>
+    <ol class="stepsx">
+      <li><b>Book a 15-minute call.</b> We look at your close rate, your average job and your capacity, and help you pick a number you can actually hit.</li>
+      <li><b>We shoot and launch.</b> We script your ads, film them with you, edit them and go live.</li>
+      <li><b>We book, you sell.</b> Every lead is called fast, qualified and booked on your calendar. After your estimate, we follow up until it closes or it's a clear no.</li>
+    </ol>
+  </section>
+
+  <section class="scheduler" id="book2">
+    <p class="claim">Ready? <span class="a">Grab your 15-minute call.</span></p>
+    <div class="iclosed-widget" data-url="https://app.iclosed.io/e/buildsignals/strategy-call" title="Strategy call" style="width: 100%; height: 620px"></div>
   </section>
 </main>
 
 <footer>BuildSignals · (213) 449-7226 · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></footer>
 
+<!-- Optional: passes the ad's UTM parameters into the scheduler so each booking shows its campaign. Runs before the widget loads. Delete this one script tag if you want the embed untouched. -->
+    <script>
+    (function(){
+      var qs=window.location.search; if(!qs||qs.length<2) return;
+      document.querySelectorAll('.iclosed-widget[data-url]').forEach(function(el){
+        var u=el.getAttribute('data-url'); el.setAttribute('data-url', u.indexOf('?')>-1 ? u+'&'+qs.slice(1) : u+qs);
+      });
+    })();
+    </script>
+    <script type="text/javascript" src="https://app.iclosed.io/assets/widget.js" async></script>
 </body>
 </html>
