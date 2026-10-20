@@ -40,7 +40,7 @@ def glass(pills, big, items, out):
     top = 270
     im.paste(photo.crop((0, 0, W, H - top)), (0, top))
     d = ImageDraw.Draw(im)
-    hf = f(HELV, 78, 1)
+    hf = min((fit(d, t, HELV, 960, 78, 1) for t in pills), key=lambda x: x.size)
     y = 72
     for line in pills:
         tw = d.textlength(line, font=hf)
@@ -65,7 +65,7 @@ def red(out):
     W, H = 1080, 1350
     im = Image.new("RGB", (W, H), (228, 30, 37))
     d = ImageDraw.Draw(im)
-    lab = "REMODELERS DOING $1M+ A YEAR"
+    lab = "BATH REMODELERS DOING $1M+ A YEAR"
     lf = f(SUP + "Arial Bold.ttf", 40)
     tw = d.textlength(lab, font=lf)
     d.rounded_rectangle([W / 2 - tw / 2 - 28, 70, W / 2 + tw / 2 + 28, 140], radius=12, fill="white")
@@ -104,7 +104,7 @@ def before_after(out):
     im.paste(p, ((S - p.width) // 2, 196))
     d = ImageDraw.Draw(im)
     d.rectangle([20, 18, S - 20, 190], fill="black")
-    d.text((S / 2, 66), "REMODELERS DOING $1M+", font=fit(d, "REMODELERS DOING $1M+", IMPACT, 980, 84), fill="white", anchor="mm")
+    d.text((S / 2, 66), "BATH REMODELERS DOING $1M+", font=fit(d, "BATH REMODELERS DOING $1M+", IMPACT, 980, 84), fill="white", anchor="mm")
     d.text((S / 2, 145), "PAY ONLY WHEN THE JOB CLOSES.", font=fit(d, "PAY ONLY WHEN THE JOB CLOSES.", IMPACT, 980, 70), fill=YEL, anchor="mm")
     big = "$1K/MO + 5%"
     d.text((S / 2, 868), big, font=fit(d, big, IMPACT, 900, 150), fill="black", anchor="mm")
@@ -116,14 +116,14 @@ def before_after(out):
     im.save(out, quality=92)
 
 
-glass(["Pay Per Close", "Remodelers Doing $1M+"],
+glass(["Pay Per Close", "Bath Remodelers Doing $1M+"],
       ["PAY PER CLOSE", "$1K/MO + 5%"],
       ["NO SETUP FEE. NO CONTRACT.", "WE SCRIPT, SHOOT + EDIT YOUR ADS", "WE CALL + BOOK EVERY LEAD", "WE FOLLOW UP AFTER YOUR ESTIMATE"],
-      "../ppc1-glass-1k5.jpg")
-glass(["Pick Your Number", "Remodelers Doing $1M+"],
+      "../ppc1-glass-1k5-bath.jpg")
+glass(["Pick Your Number", "Bath Remodelers Doing $1M+"],
       ["PICK YOUR NUMBER", "PAY 10%. WE DELIVER."],
       ["$30K CLOSED = $3K", "$50K CLOSED = $5K", "$100K CLOSED = $10K", "WE DON'T STOP TILL YOU HIT IT"],
-      "../ppc2-glass-ladder.jpg")
-red("../ppc3-red-1k5.jpg")
-before_after("../ppc4-beforeafter-1k5.jpg")
+      "../ppc2-glass-ladder-bath.jpg")
+red("../ppc3-red-1k5-bath.jpg")
+before_after("../ppc4-beforeafter-1k5-bath.jpg")
 print("ok")
