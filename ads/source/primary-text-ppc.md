@@ -9,6 +9,7 @@ Here's the offer. Then exactly what we do for it.
 💰 $1,000 a month. Pay as you go.
 🤝 Plus 5% of the jobs you close from our appointments. Billed after you sign them, not before.
 🚫 No setup fee. No contract. Cancel anytime.
+🛡️ Month 1 pays for itself or it's free. If the jobs you close from our appointments in your first 30 days don't cover your $1,000, we refund it.
 📣 Your ad spend goes straight to Meta on your own card. We never mark it up.
 
 WHAT WE DO (ALL OF IT)

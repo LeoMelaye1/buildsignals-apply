@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageEnhance
 SUP = "/System/Library/Fonts/Supplemental/"
 SYS = "/System/Library/Fonts/"
 HELV = SYS + "HelveticaNeue.ttc"
-MARK = SYS + "Noteworthy.ttc"
+MARK = SYS + "MarkerFelt.ttc"  # index 1 = Marker Felt Wide
 IMPACT = SUP + "Impact.ttf"
 RED = (224, 50, 43)
 YEL = (255, 230, 0)
@@ -53,10 +53,11 @@ def glass(pills, big, items, out):
         shadow(im, (W / 2, yy), t, bf)
         yy += 125
     yy += 20
-    it = min((fit(d, t, MARK, 820, 62, 1) for t in items), key=lambda x: x.size)  # one size for every line
+    it = min((fit(d, t, MARK, 860, 66, 1) for t in items), key=lambda x: x.size)  # one size for every line
+    x0 = (W - max(d.textlength(t, font=it) for t in items)) / 2  # block centered, lines left-aligned
     for t in items:
-        shadow(im, (150, yy), t, it, anchor="lm")
-        yy += 74
+        shadow(im, (x0, yy), t, it, anchor="lm")
+        yy += 80
     im.convert("RGB").save(out, quality=92)
 
 
@@ -79,7 +80,7 @@ def red(out):
     for t in ["No setup fee. No contract.",
               "We script, shoot + edit your ads.",
               "We call every lead + book the appointment.",
-              "We follow up after your estimate."]:
+              "Month 1 pays off or it's free."]:
         d.text((W / 2, y), t, font=fit(d, t, SUP + "Arial Bold.ttf", 940, 46), fill="white", anchor="mm")
         y += 72
     d.rectangle([0, H - 150, W, H], fill=(20, 20, 20))
@@ -111,19 +112,19 @@ def before_after(out):
     d.rectangle([20, 945, S - 20, S - 18], fill="black")
     l1 = "NO SETUP FEE. NO CONTRACT. CANCEL ANYTIME."
     d.text((S / 2, 983), l1, font=fit(d, l1, IMPACT, 980, 52), fill="white", anchor="mm")
-    l2 = "WE SHOOT YOUR ADS + BOOK YOUR APPOINTMENTS"
+    l2 = "MONTH 1 PAYS OFF OR IT'S FREE"
     d.text((S / 2, 1035), l2, font=fit(d, l2, IMPACT, 980, 46), fill=YEL, anchor="mm")
     im.save(out, quality=92)
 
 
-glass(["Pay Per Close", "Bath Remodelers Doing $1M+"],
+if False: glass(["Pay Per Close", "Bath Remodelers Doing $1M+"],
       ["PAY PER CLOSE", "$1K/MO + 5%"],
-      ["NO SETUP FEE. NO CONTRACT.", "WE SCRIPT, SHOOT + EDIT YOUR ADS", "WE CALL + BOOK EVERY LEAD", "WE FOLLOW UP AFTER YOUR ESTIMATE"],
-      "../ppc1-glass-1k5-bath.jpg")
-glass(["Pick Your Number", "Bath Remodelers Doing $1M+"],
-      ["PICK YOUR NUMBER", "PAY 10%. WE DELIVER."],
-      ["$30K CLOSED = $3K", "$50K CLOSED = $5K", "$100K CLOSED = $10K", "WE DON'T STOP TILL YOU HIT IT"],
-      "../ppc2-glass-ladder-bath.jpg")
-red("../ppc3-red-1k5-bath.jpg")
-before_after("../ppc4-beforeafter-1k5-bath.jpg")
+      ["NO SETUP FEE. NO CONTRACT.", "WE SHOOT + RUN YOUR ADS.", "WE CALL + BOOK EVERY LEAD.", "WE FOLLOW UP AFTER YOUR ESTIMATE."],
+      "../ppc1-glass-1k5-bath-v2.jpg")
+if False: glass(["Pick Your Number", "Bath Remodelers Doing $1M+"],
+      ["PICK YOUR NUMBER", "PAY 10%. ONCE."],
+      ["CLOSE $50K. PAY $5K.", "CLOSE $100K. PAY $10K.", "NO RETAINER. NO CONTRACT.", "WE DON'T STOP TILL YOU HIT IT."],
+      "../ppc2-glass-ladder-bath-v2.jpg")
+red("../ppc3-red-1k5-bath-g.jpg")
+before_after("../ppc4-beforeafter-1k5-bath-g.jpg")
 print("ok")
