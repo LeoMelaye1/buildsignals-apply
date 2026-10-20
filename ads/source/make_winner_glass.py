@@ -45,8 +45,8 @@ if False: make(["Pay Per Close", "Bath Remodelers $1M+"],
      ["PAY PER CLOSE", "$1K/MO + 5%"],
      ["NO SETUP FEE. NO CONTRACT.", "WE SHOOT + RUN YOUR ADS", "WE CALL + BOOK EVERY LEAD", "MONTH 1 PAYS OFF OR IT'S FREE"],
      "../ppc1-winnerglass-1k5.jpg")
-make(["Pick Your Number", "Bath Remodelers $1M+"],
-     ["WE GET YOU $100K", "IN CLOSED JOBS"],
-     ["YOU PAY 10% ($10K). ONCE.", "OR PICK $50K, $250K, ANY NUMBER", "WE SHOOT ADS, CALL + BOOK LEADS", "WE DON'T STOP TILL YOU HIT IT"],
-     "../ppc2-winnerglass-ladder-v2.jpg")
+make(["Bath Remodelers", "We Get You $100K"],
+     ["$100K IN NEW", "SIGNED BATH JOBS"],
+     ["YOU PAY 10%. ONCE.", "OR PICK $50K, $250K, ANY NUMBER", "WE SHOOT ADS, CALL + BOOK LEADS", "WE DON'T STOP TILL YOU HIT IT"],
+     "../ladder-glass.jpg")
 print("ok")
