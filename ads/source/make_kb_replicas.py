@@ -46,19 +46,14 @@ def logo(im, cx, cy, h, dark=True):
 # 1) Cream, big gold number (their #2)
 def cream(out):
     im = Image.new("RGB", (S, S), (244, 239, 230)); d = ImageDraw.Draw(im)
-    logo(im, S / 2, 120, 70, dark=True)
-    d.text((S / 2, 290), "Bath Remodelers,", font=fit(d, "Bath Remodelers,", PB, 900, 104), fill=INK, anchor="mm")
-    d.text((S / 2, 395), "get the system behind", font=F(PX, 64), fill=INK, anchor="mm")
-    BIG, BIGF = "$8.2M", fit(d, "$8.2M", PB, 820, 300)
-    gold(im, (S / 2, 590), BIG, BIGF)
-    d = ImageDraw.Draw(im)
-    if d.textlength(BIG, font=BIGF) < 420:
-     for (x1, y1, x2, y2) in [(250, 520, 320, 545), (240, 600, 320, 600), (250, 680, 320, 655), (830, 520, 760, 545), (840, 600, 760, 600), (830, 680, 760, 655)]:
-         d.line([(x1, y1), (x2, y2)], fill=GOLD_D, width=6)
-    gold(im, (S / 2, 790), "in signed bath jobs", fit(d, "in signed bath jobs", PX, 900, 76))
-    d = ImageDraw.Draw(im); d.line([(150, 845), (930, 845)], fill=GOLD_D, width=3)
-    d.text((S / 2, 915), "done for you. You only pay", font=fit(d, "done for you. You only pay", PX, 960, 70), fill=INK, anchor="mm")
-    d.text((S / 2, 1005), "when the job closes", font=fit(d, "done for you. You only pay", PX, 960, 70), fill=INK, anchor="mm")
+    logo(im, S / 2, 110, 64, dark=True)
+    d.text((S / 2, 255), "Bath Remodelers,", font=fit(d, "Bath Remodelers,", PB, 900, 100), fill=INK, anchor="mm")
+    d.text((S / 2, 355), "you only pay when the job closes", font=fit(d, "you only pay when the job closes", PX, 920, 56), fill=INK, anchor="mm")
+    big = fit(d, "PAY PER", PB, 900, 230)
+    gold(im, (S / 2, 530), "PAY PER", big); gold(im, (S / 2, 730), "CLOSE", big)
+    d = ImageDraw.Draw(im); d.line([(150, 860), (930, 860)], fill=GOLD_D, width=3)
+    d.text((S / 2, 925), "We run your ads + book the", font=fit(d, "appointments. You just sell.", PX, 940, 66), fill=INK, anchor="mm")
+    d.text((S / 2, 1008), "appointments. You just sell.", font=fit(d, "appointments. You just sell.", PX, 940, 66), fill=INK, anchor="mm")
     im.save(out, quality=92)
 
 
@@ -148,14 +143,14 @@ def before_after(out):
     im.paste(Image.new("RGB", (S, 260), (12, 12, 12)), (0, 380), grad)
     d = ImageDraw.Draw(im)
     d.text((S / 2, 590), "Bath Remodelers,", font=F(PX, 72), fill="white", anchor="mm")
-    f = F(PX, 72); t1, t2 = "we turn homeowners ", "into"
+    f = F(PX, 72); t1, t2 = "you only pay ", "when"
     w = d.textlength(t1 + t2, font=f); x0 = S / 2 - w / 2
     d.text((x0, 675), t1, font=f, fill="white", anchor="lm"); gold(im, (x0 + d.textlength(t1, font=f), 675), t2, f, anchor="lm")
-    gold(im, (S / 2, 760), "signed bath jobs", f)
+    gold(im, (S / 2, 760), "the job closes", f)
     d = ImageDraw.Draw(im)
-    d.text((S / 2, 845), "Done for you. You only pay when it closes.", font=fit(d, "Done for you. You only pay when it closes.", PX, 980, 64), fill="white", anchor="mm")
+    d.text((S / 2, 845), "We run your ads + book the appointments.", font=fit(d, "We run your ads + book the appointments.", PX, 980, 64), fill="white", anchor="mm")
     d.rounded_rectangle([60, 905, S - 60, 1040], radius=14, outline=GOLD_D, width=3)
-    for i, (l1, l2) in enumerate([("ADS SHOT", "FOR YOU"), ("APPOINTMENTS", "BOOKED FOR YOU"), ("PAY WHEN", "IT CLOSES")]):
+    for i, (l1, l2) in enumerate([("WE RUN", "YOUR ADS"), ("WE BOOK", "APPOINTMENTS"), ("YOU PAY WHEN", "IT CLOSES")]):
         x = 60 + (S - 120) * (i + 0.5) / 3
         d.text((x, 952), l1, font=F(PBo, 30), fill="white", anchor="mm"); d.text((x, 992), l2, font=F(PBo, 30), fill="white", anchor="mm")
         if i: d.line([(60 + (S - 120) * i / 3, 925), (60 + (S - 120) * i / 3, 1020)], fill=GOLD_D, width=2)
@@ -168,8 +163,8 @@ def cover_img(im, w, h):
     return im.crop((l, t, l + w, t + h))
 
 
-cream("../kb1-cream-ppc.jpg")
-attention("../kb2-attention-ppc.jpg")
-black("../kb3-black-ppc.jpg")
-before_after("../kb4-beforeafter-ppc.jpg")
+cream("../kb1-cream-ppcsimple.jpg")
+if False: attention("../kb2-attention-ppcsimple.jpg")
+if False: black("../kb3-black-ppcsimple.jpg")
+before_after("../kb4-beforeafter-ppcsimple.jpg")
 print("ok")
