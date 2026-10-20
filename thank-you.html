@@ -190,6 +190,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
   // Booked from the LA offer (apply.buildsignals.com/la)? Swap in the LA terms.
   (function(){
     var q = (location.search + ' ' + document.referrer).toLowerCase();
+    if (q.indexOf('ppc1k5') > -1 || q.indexOf('/ppc') > -1) {
+      document.getElementById('ty-step2').innerHTML = 'We look at <b>your area, your average job and your close rate</b> to make sure we can move the needle.';
+      document.getElementById('ty-step3').innerHTML = 'If it is a fit, we launch: <b>$1,000 a month + 5% of the jobs we close for you</b>. No setup fee, no contract. Your ad spend goes straight to Meta.';
+      return;
+    }
+    if (q.indexOf('pickyournumber') > -1 || q.indexOf('/pick') > -1) {
+      document.getElementById('ty-step2').innerHTML = 'We look at <b>your close rate, average job and capacity</b> and help you pick a number you can actually hit.';
+      document.getElementById('ty-step3').innerHTML = 'If it is a fit, you pay <b>10% of your number, once</b>, and we keep going until you have closed it. Your ad spend goes straight to Meta.';
+      return;
+    }
     if (q.indexOf('la2wkfree') === -1) return;
     document.getElementById('ty-step2').innerHTML = 'We check whether <b>one of the 5 LA spots is still open</b> for you.';
     document.getElementById('ty-step3').innerHTML = 'If it is a fit, your <b>first 2 weeks are free</b>: you cover the ad spend, and if you don\'t sign $25k from our appointments we refund it. After that, pay per close if you like us.';
