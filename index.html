@@ -21,11 +21,11 @@ src="https://www.facebook.com/tr?id=2609465719513721&ev=PageView&noscript=1"
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BuildSignals | $297 Per Sat Bath Appointment. We Pay for the Ads.</title>
-<meta name="description" content="For bath remodelers with 3 or more in-home reps. $297 per sat appointment from a prepaid balance. We pay for the ads, no-shows are free, and every sit is backed by our 10x guarantee.">
+<meta name="description" content="For bath remodelers. $297 per sat appointment from a prepaid balance. We pay for the ads, no-shows are free, and every sit is backed by our 10x guarantee.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BuildSignals">
 <meta property="og:title" content="BuildSignals | $297 Per Sat Bath Appointment. We Pay for the Ads.">
-<meta property="og:description" content="For bath remodelers with 3 or more in-home reps. $297 per sat appointment, we pay for the ads, one bath company per area.">
+<meta property="og:description" content="For bath remodelers. $297 per sat appointment, we pay for the ads, one bath company per area.">
 <meta property="og:url" content="https://apply.buildsignals.com/">
 <!-- Add when ready: <meta property="og:image" content="https://buildsignals.com/og-apply.png"> (1200x630) -->
 <meta name="theme-color" content="#0E1416">
@@ -59,27 +59,13 @@ h1 .a{color:var(--accent)}
 .proofline{font-size:16px;line-height:1.45;color:var(--body);margin:14px auto 0;max-width:760px}
 .proofline b{color:var(--accent)}
 
-/* The gate sits where the scheduler was. Passing it reveals the iClosed calendar. */
+/* The iClosed calendar, open to everyone (no qualifying questions since 2026-11-23). */
 .scheduler{margin:28px auto 0;max-width:1000px;scroll-margin-top:16px}
 .claim{text-align:center;font-weight:700;font-size:clamp(16px,1.4vw,19px);line-height:1.4;margin:0 0 14px;color:var(--ink)}
 .claim .a{color:var(--accent)}
-.gate{max-width:680px;margin:0 auto;border:1px solid var(--line);border-radius:14px;padding:26px 24px 22px;background:#FFFFFF;box-shadow:0 6px 24px rgba(17,17,17,.06)}
-.progress{display:flex;gap:6px;margin:0 0 20px}
-.progress span{flex:1;height:4px;border-radius:2px;background:var(--line);transition:background .2s}
-.progress span.on{background:var(--accent)}
-.step{display:none}
-.step.active{display:block}
-.q{font-family:'Poppins',system-ui,sans-serif;font-weight:500;font-size:clamp(19px,2vw,23px);line-height:1.3;margin:0 0 6px;outline:none}
-.hint{font-size:15px;line-height:1.45;color:var(--muted);margin:0}
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
-.opt{-webkit-appearance:none;appearance:none;border:1.5px solid var(--line);background:#FFFFFF;border-radius:10px;padding:14px 16px;min-height:54px;font:600 17px 'Barlow',system-ui,sans-serif;color:var(--ink);text-align:left;cursor:pointer;transition:border-color .15s,background .15s}
-.opt:hover{border-color:#BDB6A6}
-.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--tint)}
-.opt:focus-visible,.textbtn:focus-visible,.back:focus-visible{outline:3px solid rgba(224,50,43,.35);outline-offset:2px}
-.textbtn{background:none;border:0;padding:8px 0;margin-top:12px;font:600 15px 'Barlow',system-ui,sans-serif;color:var(--muted);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.endtext{font-size:16px;line-height:1.55;color:var(--body);margin:8px 0 0}
+.back:focus-visible{outline:3px solid rgba(224,50,43,.35);outline-offset:2px}
 
-/* Three facts under the gate */
+/* Three facts under the calendar */
 .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:0 auto;padding:34px 0 30px;text-align:center}
 .fact{display:flex;flex-direction:column;gap:6px;padding:0 10px}
 .fact .lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
@@ -153,8 +139,6 @@ footer a{color:var(--muted)}
   .topbar{padding:18px}.brand img{height:26px}
   .hero{padding:28px 0 4px}.rule{margin:20px auto 18px}
   .scheduler{margin-top:22px}
-  .gate{padding:22px 16px 18px}
-  .opts{grid-template-columns:1fr}
 }
 </style>
 <!-- Microsoft Clarity (heatmaps + session recordings) -->
@@ -170,7 +154,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
 
 <main class="wrap">
   <section class="hero">
-    <p class="eyebrow">For bath remodelers with 3 or more in&#8209;home reps</p>
+    <p class="eyebrow">For bath remodelers</p>
     <h1>$297 per sat bath appointment. <span class="a">We pay for the ads.</span></h1>
     <div class="rule" role="presentation"></div>
     <p class="sub">Exclusive homeowners, called in under 5 minutes and booked onto your reps' calendars with every decision-maker home. No-shows are free.</p>
@@ -178,74 +162,15 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
   </section>
 
   <section class="scheduler" id="check">
-    <!-- Qualifying gate. Answers that close it: 1 to 2 reps, under 40 demos a month, or no 20-sit start. -->
-    <div id="gatebox">
-      <p class="claim">One bath company per area. <span class="a">Check if yours is still open.</span></p>
-      <div class="gate" id="gate" aria-live="polite">
-        <div class="progress" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-
-        <div class="step active" data-step="1">
-          <p class="q" tabindex="-1">How many people run in-home bath appointments for you, including you?</p>
-          <p class="hint">4 quick questions, then pick a time for your area check.</p>
-          <div class="opts">
-            <button class="opt" type="button" aria-pressed="false" data-key="reps" data-val="1-2" data-fail="reps">1 or 2</button>
-            <button class="opt" type="button" aria-pressed="false" data-key="reps" data-val="3-5">3 to 5</button>
-            <button class="opt" type="button" aria-pressed="false" data-key="reps" data-val="6-10">6 to 10</button>
-            <button class="opt" type="button" aria-pressed="false" data-key="reps" data-val="11+">11 or more</button>
-          </div>
-        </div>
-
-        <div class="step" data-step="2">
-          <p class="q" tabindex="-1">About how many in-home demos do you run a month?</p>
-          <div class="opts">
-            <button class="opt" type="button" aria-pressed="false" data-key="demos" data-val="under-40" data-fail="demos">Under 40</button>
-            <button class="opt" type="button" aria-pressed="false" data-key="demos" data-val="40-80">40 to 80</button>
-            <button class="opt" type="button" aria-pressed="false" data-key="demos" data-val="80-150">80 to 150</button>
-            <button class="opt" type="button" aria-pressed="false" data-key="demos" data-val="150+">150 or more</button>
-          </div>
-          <button class="textbtn" type="button" data-back>Back</button>
-        </div>
-
-        <div class="step" data-step="3">
-          <p class="q" tabindex="-1">Can you start with 20 sat appointments ($5,940, paid upfront)?</p>
-          <p class="hint">$297 per sit, and we pay for the ads. No-shows don't count, and unused sits are refunded if you stop.</p>
-          <div class="opts">
-            <button class="opt" type="button" aria-pressed="false" data-key="start" data-val="yes">Yes</button>
-            <button class="opt" type="button" aria-pressed="false" data-key="start" data-val="no" data-fail="start">Not right now</button>
-          </div>
-          <button class="textbtn" type="button" data-back>Back</button>
-        </div>
-
-        <div class="step" data-step="4">
-          <p class="q" tabindex="-1">How many more appointments a month could your reps run?</p>
-          <div class="opts">
-            <button class="opt" type="button" aria-pressed="false" data-key="capacity" data-val="up-to-10">Up to 10</button>
-            <button class="opt" type="button" aria-pressed="false" data-key="capacity" data-val="10-20">10 to 20</button>
-            <button class="opt" type="button" aria-pressed="false" data-key="capacity" data-val="20-40">20 to 40</button>
-            <button class="opt" type="button" aria-pressed="false" data-key="capacity" data-val="40+">40 or more</button>
-          </div>
-          <button class="textbtn" type="button" data-back>Back</button>
-        </div>
-
-        <div class="step" data-step="fail">
-          <p class="q" tabindex="-1">Thanks for being straight with us.</p>
-          <p class="endtext">Right now we only take on bath companies with 3 or more people running in-home appointments, 40 or more demos a month and room for a 20-sit start. When you get there, come back. This page will be here.</p>
-          <button class="textbtn" type="button" data-restart>Change my answers</button>
-        </div>
-      </div>
-    </div>
-
-    <div id="cal" hidden>
-      <p class="claim">You qualify. <span class="a">Pick a time for your 15-minute area check.</span></p>
-      <!-- The iClosed widget is added here after the gate is passed, with the ad's UTM parameters. -->
-      <div id="calmount"></div>
-    </div>
+    <p class="claim">One bath company per area. <span class="a">Pick a time for your 15-minute area check.</span></p>
+    <!-- The iClosed widget is added here on page load, with the ad's UTM parameters. -->
+    <div id="calmount"></div>
   </section>
 
   <section class="trust">
     <div class="fact"><span class="lbl">How it works</span><span class="val">We pay for the ads and run them for your company alone. Our setters call every lead in under 5 minutes, book onto your reps' calendars and confirm every decision-maker will be home.</span></div>
     <div class="fact"><span class="lbl">What you pay</span><span class="val">$297 per sat appointment, from a prepaid balance. Start with 20 sits ($5,940). No-shows and one-legs don't use a sit. Unused sits are refunded if you stop.</span></div>
-    <div class="fact"><span class="lbl">Who this is for</span><span class="val">Bath remodelers with 3 or more people running in-home appointments and 40+ demos a month. One bath company per area, in writing.</span></div>
+    <div class="fact"><span class="lbl">Who this is for</span><span class="val">Bath remodelers anywhere in the US who want more sat appointments. One bath company per area, in writing.</span></div>
   </section>
 
   <section class="guar" aria-labelledby="guar-h">
@@ -258,7 +183,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
     </ul>
   </section>
 
-  <!-- Proof, for the reader who scrolled past the gate. -->
+  <!-- Proof, for the reader who scrolls past the calendar. -->
   <section class="proof">
     <div class="trusted">Trusted by</div>
     <div class="marquee" aria-label="Clients we have booked for">
@@ -396,76 +321,19 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
 <footer>BuildSignals · (213) 449-7226 · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></footer>
 
 <script>
-// Qualifying gate: 4 questions, then the iClosed calendar.
+// The iClosed calendar loads right away (the qualifying questions were removed on 2026-11-23).
+// The ad's UTM parameters are passed through so iClosed records where each booking came from.
 (function(){
-  var box=document.getElementById('gatebox'), gate=document.getElementById('gate'), cal=document.getElementById('cal');
-  if(!box||!gate||!cal) return;
-  var steps=[].slice.call(gate.querySelectorAll('.step'));
-  var bars=[].slice.call(gate.querySelectorAll('.progress span'));
-  var prog=gate.querySelector('.progress');
-  var answers={}, cur=1, started=false;
-  var local=/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
-
-  function show(name){
-    steps.forEach(function(s){ s.classList.toggle('active', s.getAttribute('data-step')===String(name)); });
-    var n=parseInt(name,10);
-    prog.hidden=isNaN(n);
-    bars.forEach(function(b,i){ b.classList.toggle('on', !isNaN(n) && i<n); });
-    var q=gate.querySelector('.step.active .q');
-    if(q && started){ try{ q.focus({preventScroll:true}); }catch(e){ q.focus(); } }
-  }
-
-  // Custom events for the gate. They never fire from a local preview.
-  function track(ev, extra){
-    if(local) return;
-    var p={}, k;
-    for(k in answers) p[k]=answers[k];
-    if(extra) for(k in extra) p[k]=extra[k];
-    try{ if(window.fbq) window.fbq('trackCustom', ev, p); }catch(e){}
-    try{ if(window.clarity){ window.clarity('event', ev); for(k in p) window.clarity('set', 'gate_'+k, String(p[k])); } }catch(e){}
-  }
-
-  function openCal(){
-    box.hidden=true; cal.hidden=false;
-    var mount=document.getElementById('calmount');
-    if(mount.querySelector('.iclosed-widget')) return;
-    var url='https://app.iclosed.io/e/buildsignals/strategy-call', extra=[];
-    if(location.search && location.search.length>1) extra.push(location.search.slice(1));
-    ['reps','demos','capacity'].forEach(function(k){ if(answers[k]) extra.push('bs_'+k+'='+encodeURIComponent(answers[k])); });
-    if(extra.length) url+=(url.indexOf('?')>-1?'&':'?')+extra.join('&');
-    var w=document.createElement('div');
-    w.className='iclosed-widget'; w.setAttribute('data-url', url); w.setAttribute('title', 'Strategy call');
-    w.style.width='100%'; w.style.height='620px';
-    mount.appendChild(w);
-    var s=document.createElement('script'); s.type='text/javascript'; s.async=true; s.src='https://app.iclosed.io/assets/widget.js';
-    document.body.appendChild(s);
-  }
-
-  gate.addEventListener('click', function(e){
-    var b=e.target.closest ? e.target.closest('button') : null;
-    if(!b || !gate.contains(b)) return;
-    started=true;
-    if(b.hasAttribute('data-back')){ cur=Math.max(1, cur-1); show(cur); return; }
-    if(b.hasAttribute('data-restart')){
-      answers={}; cur=1;
-      [].forEach.call(gate.querySelectorAll('.opt'), function(o){ o.setAttribute('aria-pressed','false'); });
-      show(1); return;
-    }
-    var key=b.getAttribute('data-key'); if(!key) return;
-    [].forEach.call(b.parentNode.querySelectorAll('.opt'), function(o){ o.setAttribute('aria-pressed', o===b ? 'true' : 'false'); });
-    answers[key]=b.getAttribute('data-val');
-    var reason=b.getAttribute('data-fail');
-    if(reason){ track('GateFail', {reason: reason}); show('fail'); return; }
-    if(cur<4){ cur++; show(cur); return; }
-    track('GatePass');
-    try{ sessionStorage.setItem('bs_gate', 'pass'); }catch(err){}
-    openCal();
-    cal.scrollIntoView({behavior:'smooth', block:'start'});
-  });
-
-  // Someone who already passed in this tab goes straight to the calendar.
-  try{ if(sessionStorage.getItem('bs_gate')==='pass'){ openCal(); return; } }catch(e){}
-  show(1);
+  var mount=document.getElementById('calmount');
+  if(!mount || mount.querySelector('.iclosed-widget')) return;
+  var url='https://app.iclosed.io/e/buildsignals/strategy-call';
+  if(location.search && location.search.length>1) url+='?'+location.search.slice(1);
+  var w=document.createElement('div');
+  w.className='iclosed-widget'; w.setAttribute('data-url', url); w.setAttribute('title', 'Strategy call');
+  w.style.width='100%'; w.style.height='620px';
+  mount.appendChild(w);
+  var s=document.createElement('script'); s.type='text/javascript'; s.async=true; s.src='https://app.iclosed.io/assets/widget.js';
+  document.body.appendChild(s);
 })();
 </script>
 
