@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script>
+// Runs before any tracking loads. iClosed's redirects add the invitee's details to the address
+// (?iclosedEmail=...&iclosedPhone=...&iclosedName=..., seen on its turn-away redirect on Nov 24, 2026, and the
+// booking redirect here has "Enable forwarding of event parameters" on). Keep only the utm_ tags in the address,
+// so no name, email or phone number reaches Meta or Clarity. The offer check at the bottom of the page reads the
+// original query from window.__bsQuery, which stays in the page and is never sent anywhere.
+(function(){
+  window.__bsQuery = location.search;
+  if (!location.search) return;
+  try {
+    var keep = new URLSearchParams();
+    new URLSearchParams(location.search).forEach(function(v, k){ if (/^utm_/i.test(k)) keep.append(k, v); });
+    var q = keep.toString();
+    history.replaceState(null, '', location.pathname + (q ? '?' + q : '') + location.hash);
+  } catch (e) {}
+})();
+</script>
 <!-- Meta Pixel Code (base pixel only. The booking conversion is tracked by iClosed's "Call booked" event, so we do NOT fire a second conversion here.) -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -189,7 +206,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
 <script>
   // Booked from the LA offer (apply.buildsignals.com/la)? Swap in the LA terms.
   (function(){
-    var q = (location.search + ' ' + document.referrer).toLowerCase();
+    var q = ((window.__bsQuery || location.search) + ' ' + document.referrer).toLowerCase();
     if (q.indexOf('guarantee') > -1) {
       document.getElementById('ty-step2').innerHTML = 'We look at <b>your area, your average job and how many appointments you can handle</b>.';
       document.getElementById('ty-step3').innerHTML = 'If it is a fit, we launch: <b>15 sat appointments in your first 30 days on $1,500 in ad spend or less, or your money back</b>. $1,000 a month + 5% of the jobs you close. Your ad spend goes straight to Meta.';
