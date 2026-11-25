@@ -83,8 +83,10 @@ h1 .a{color:var(--accent-on-dark)}
 .stats span{display:block;font-size:14px;line-height:1.4;color:#99A2A7}
 .stats .who{margin-top:8px;color:#D8DDE0;font-weight:600}
 
-/* ===== Application: one white card over the hero; iClosed's widget fills it ===== */
-.apply{position:relative;z-index:2;max-width:900px;margin:-112px auto 0;padding:30px 26px 14px;background:#FFFFFF;border-radius:22px;box-shadow:0 28px 70px rgba(14,20,22,.22),0 2px 6px rgba(14,20,22,.06);scroll-margin-top:20px}
+/* ===== Application: one white card over the hero =====
+   iClosed shows form and calendar side by side only when its frame is about 1000px wide or more;
+   narrower, it switches to a cramped stacked layout. So the card's inner width stays at 1000px. */
+.apply{position:relative;z-index:2;max-width:1064px;margin:-112px auto 0;padding:30px 32px 14px;background:#FFFFFF;border-radius:22px;box-shadow:0 28px 70px rgba(14,20,22,.22),0 2px 6px rgba(14,20,22,.06);scroll-margin-top:20px}
 .apply-head{text-align:center;margin:0 0 18px}
 .apply h2{font-size:clamp(22px,2.4vw,28px);line-height:1.2;letter-spacing:-.025em}
 .apply-head p{margin:8px auto 0;max-width:560px;font-size:16px;color:var(--muted)}
