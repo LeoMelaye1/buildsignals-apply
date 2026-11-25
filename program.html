@@ -32,100 +32,137 @@ src="https://www.facebook.com/tr?id=2609465719513721&ev=PageView&noscript=1"
 <meta name="theme-color" content="#0E1416">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 
 <style>
-:root{--ink:#111111;--body:#2B2A26;--muted:#6B675C;--line:#E4E0D6;--accent:#E0322B;--accent-dark:#B8241E;--tint:#FBF4F3;--bar:#0E1416;--paper:#F7F6F2}
+:root{
+  --dark:#0E1416;--ink:#0F1416;--body:#3B4144;--muted:#6B7377;--line:#E7E5E0;
+  --accent:#E0322B;--accent-dark:#C4261F;--accent-on-dark:#F2493D;--tint:#FDF2F1;--paper:#F6F5F2;
+}
 *{box-sizing:border-box}
 html,body{margin:0;background:#FFFFFF;color:var(--ink)}
 html{scroll-behavior:smooth}
-body{font-family:'Barlow',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;font-size:17px;line-height:1.5}
 img{max-width:100%}
-h1,h2,h3{font-family:'Poppins',system-ui,sans-serif;color:var(--ink)}
+h1,h2,h3{margin:0;color:var(--ink);font-weight:800;letter-spacing:-.03em}
 .a{color:var(--accent)}
 .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 24px}
-
-/* Who it's for, then the logo bar */
-.strip{background:var(--paper);border-bottom:1px solid var(--line);text-align:center;padding:9px 16px;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--ink)}
-.topbar{background:var(--bar);padding:22px 20px;display:flex;justify-content:center}
-.topbar img{display:block;height:30px;width:auto}
-
-/* Hero: the guarantee, three checks, the remedy */
-.hero{text-align:center;padding:46px 0 10px}
-h1{font-weight:700;font-size:clamp(30px,4.6vw,54px);line-height:1.14;letter-spacing:-.015em;margin:0 auto;max-width:980px}
-.checks{list-style:none;margin:26px auto 0;padding:0;max-width:640px;text-align:left;display:flex;flex-direction:column;gap:12px}
-.checks li{position:relative;padding-left:36px;font-size:18px;line-height:1.45;color:var(--body);font-weight:500}
-.checks li::before{content:"";position:absolute;left:0;top:2px;width:22px;height:22px;border-radius:50%;background:var(--accent)}
-.checks li::after{content:"";position:absolute;left:8px;top:6px;width:6px;height:11px;border:solid #FFFFFF;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
-.remedy{max-width:640px;margin:18px auto 0;font-size:15px;line-height:1.5;color:var(--muted)}
-
-/* Cards and buttons */
-.card{background:#FFFFFF;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 34px rgba(17,17,17,.08)}
-.btn{display:inline-block;background:var(--accent);color:#FFFFFF;font-weight:700;font-size:17px;text-decoration:none;padding:15px 28px;border-radius:999px;box-shadow:0 6px 18px rgba(224,50,43,.28)}
-.btn:hover{background:var(--accent-dark)}
-.btn::after{content:" \2192"}
-.btn:focus-visible{outline:3px solid rgba(224,50,43,.35);outline-offset:3px}
 .center{text-align:center}
 
-/* The application: iClosed asks the questions, then shows the calendar */
-.apply{max-width:1040px;margin:34px auto 0;padding:28px 22px 18px;scroll-margin-top:16px}
-.apply h2{font-weight:700;font-size:clamp(22px,2.6vw,30px);line-height:1.2;text-align:center;margin:0 0 8px}
-.apply .lead{text-align:center;font-size:16px;line-height:1.5;color:var(--body);margin:0 auto 18px;max-width:620px}
+/* Buttons */
+.btn{display:inline-block;background:var(--accent);color:#FFFFFF;font-weight:700;font-size:17px;letter-spacing:-.01em;text-decoration:none;padding:16px 30px;border-radius:999px;box-shadow:0 10px 26px rgba(224,50,43,.32);transition:background .15s,transform .15s}
+.btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.btn::after{content:" \2192"}
+.btn:focus-visible{outline:3px solid rgba(224,50,43,.4);outline-offset:3px}
+.kicker{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+.sec-h{font-size:clamp(28px,3.4vw,44px);line-height:1.1;margin:0 0 34px}
 
-/* Your next 90 days: the guarantee as plain math */
-.next{text-align:center;padding:64px 0 10px}
-.next h2,.steps h2,.wins h2{font-weight:700;font-size:clamp(26px,3.4vw,40px);line-height:1.15;margin:0 0 26px}
-.math{display:flex;align-items:stretch;justify-content:center;gap:14px;max-width:980px;margin:0 auto}
-.m{flex:1;padding:24px 18px;display:flex;flex-direction:column;gap:8px;justify-content:center}
-.m b{font-family:'Poppins',system-ui,sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1}
-.m span{font-size:15px;line-height:1.45;color:var(--body)}
-.m.goal{background:var(--tint);border-color:var(--accent)}
-.m.goal b{color:var(--accent)}
-.op{align-self:center;font-family:'Poppins',system-ui,sans-serif;font-weight:700;font-size:30px;color:var(--muted)}
-.fine{max-width:760px;margin:18px auto 26px;font-size:14px;line-height:1.55;color:var(--muted)}
+/* ===== Hero: dark, one headline, three checks, proof in numbers ===== */
+.hero{position:relative;overflow:hidden;background:var(--dark);color:#FFFFFF;text-align:center;padding:30px 0 160px}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 55% at 50% 0%,rgba(224,50,43,.24),rgba(224,50,43,0) 70%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:44px 44px;
+  -webkit-mask-image:radial-gradient(70% 60% at 50% 25%,#000,transparent 75%);mask-image:radial-gradient(70% 60% at 50% 25%,#000,transparent 75%)}
+.hero .wrap{position:relative;z-index:1}
+.logo{display:block;height:30px;width:auto;margin:0 auto 52px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 26px;padding:8px 16px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.05);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#E8ECEE}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--accent-on-dark);box-shadow:0 0 0 4px rgba(242,73,61,.22)}
+h1{color:#FFFFFF;font-size:clamp(34px,4.7vw,62px);line-height:1.06;letter-spacing:-.035em;max-width:1000px;margin:0 auto}
+h1 .a{color:var(--accent-on-dark)}
+.checks{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 24px;max-width:1100px;margin:30px auto 0;padding:0}
+.checks li{position:relative;padding-left:30px;font-size:16px;font-weight:500;color:#D8DDE0;text-align:left}
+.checks li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--accent)}
+.checks li::after{content:"";position:absolute;left:7px;top:6px;width:5px;height:10px;border:solid #FFFFFF;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.terms{max-width:640px;margin:18px auto 0;font-size:14px;line-height:1.55;color:#8F989D}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);max-width:920px;margin:46px auto 0;padding-top:30px;border-top:1px solid rgba(255,255,255,.1)}
+.stats div{padding:0 20px}
+.stats div+div{border-left:1px solid rgba(255,255,255,.1)}
+.stats b{display:block;font-size:clamp(26px,2.6vw,34px);font-weight:800;letter-spacing:-.03em;color:#FFFFFF;line-height:1.1}
+.stats span{display:block;font-size:14px;line-height:1.4;color:#99A2A7}
+.stats .who{margin-top:8px;color:#D8DDE0;font-weight:600}
 
-/* The 4-step system, on a light grid like a planning board */
-.steps{margin-top:64px;padding:64px 0;background-color:var(--paper);background-image:linear-gradient(rgba(17,17,17,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(17,17,17,.045) 1px,transparent 1px);background-size:28px 28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.kicker{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
-.grid4{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:980px;margin:0 auto 30px;text-align:left}
-.step{padding:24px 24px 22px}
-.num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:var(--accent);color:#FFFFFF;font-family:'Poppins',system-ui,sans-serif;font-weight:700;font-size:18px}
-.step small{display:block;margin:14px 0 4px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.step h3{font-weight:700;font-size:21px;line-height:1.25;margin:0 0 8px}
-.step p{margin:0;font-size:16px;line-height:1.55;color:var(--body)}
+/* ===== Application: one white card over the hero; iClosed's widget fills it ===== */
+.apply{position:relative;z-index:2;max-width:900px;margin:-112px auto 0;padding:30px 26px 14px;background:#FFFFFF;border-radius:22px;box-shadow:0 28px 70px rgba(14,20,22,.22),0 2px 6px rgba(14,20,22,.06);scroll-margin-top:20px}
+.apply-head{text-align:center;margin:0 0 18px}
+.apply h2{font-size:clamp(22px,2.4vw,28px);line-height:1.2;letter-spacing:-.025em}
+.apply-head p{margin:8px auto 0;max-width:560px;font-size:16px;color:var(--muted)}
+.apply-steps{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:0;list-style:none}
+.apply-steps li{font-size:13px;font-weight:600;color:var(--body);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.apply-steps b{color:var(--accent)}
 
-/* Real wins: screenshots straight from clients */
-.wins{padding:64px 0 10px;text-align:center}
-.wins .sub{font-size:16px;color:var(--muted);margin:-14px 0 26px}
-.masonry{columns:3 300px;column-gap:16px;max-width:1040px;margin:0 auto 30px;text-align:left}
-.win{break-inside:avoid;margin:0 0 16px;background:var(--bar);border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+/* ===== Your next 90 days: the guarantee as one line of math ===== */
+.next{padding:96px 0 10px;text-align:center}
+.eq{display:grid;grid-template-columns:1fr auto 1fr auto 1.25fr;align-items:stretch;max-width:1000px;margin:0 auto;background:#FFFFFF;border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 34px rgba(14,20,22,.06);overflow:hidden;text-align:center}
+.term{display:flex;flex-direction:column;justify-content:center;padding:34px 22px}
+.term b{font-size:clamp(36px,4vw,54px);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.term span{margin-top:12px;font-size:15px;line-height:1.45;color:var(--muted)}
+.op{align-self:center;font-size:30px;font-weight:700;color:#BFC3C5;padding:0 4px}
+.goal{background:var(--tint);border-left:1px solid #F6D9D6}
+.goal b{color:var(--accent)}
+.fine{max-width:760px;margin:20px auto 32px;font-size:14px;line-height:1.6;color:var(--muted)}
+
+/* ===== The 4-step system ===== */
+.steps{margin-top:96px;padding:96px 0;background-color:var(--paper);background-image:linear-gradient(rgba(15,20,22,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(15,20,22,.045) 1px,transparent 1px);background-size:32px 32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1000px;margin:0 auto 34px;text-align:left}
+.step{background:#FFFFFF;border:1px solid var(--line);border-radius:20px;padding:28px 28px 26px;box-shadow:0 8px 24px rgba(14,20,22,.05)}
+.step-top{display:flex;align-items:center;gap:14px;margin:0 0 14px}
+.num{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:var(--accent);color:#FFFFFF;font-weight:800;font-size:19px}
+.step small{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.step h3{font-size:21px;line-height:1.25;letter-spacing:-.02em;margin:0 0 8px}
+.step p{margin:0;font-size:16px;line-height:1.6;color:var(--body)}
+
+/* ===== Real wins ===== */
+.wins{padding:96px 0 20px;text-align:center}
+.wins .sub{font-size:16px;color:var(--muted);margin:-20px 0 30px}
+/* Four hand-balanced columns, so every client shows near the top. 2 columns on tablets, 1 on phones. */
+.wall{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:start;max-width:1100px;margin:0 auto 34px;text-align:left}
+.wall .col{display:flex;flex-direction:column;gap:16px}
+.win{margin:0;background:var(--dark);border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 24px rgba(14,20,22,.07)}
 .win img{display:block;width:100%;height:auto}
-.win figcaption{background:#FFFFFF;padding:12px 14px;font-size:15px;line-height:1.45;color:var(--body)}
+.win figcaption{background:#FFFFFF;padding:14px 16px;font-size:15px;line-height:1.5;color:var(--body)}
 .win figcaption b{color:var(--ink)}
 
-/* Close */
-.final{max-width:760px;margin:54px auto 64px;padding:34px 28px;text-align:center}
-.final h2{font-weight:700;font-size:clamp(26px,3.2vw,36px);line-height:1.15;margin:0 0 12px}
-.final p{font-size:17px;line-height:1.55;color:var(--body);margin:0 auto 22px;max-width:560px}
+/* ===== Close: dark band, like the hero ===== */
+.final{position:relative;overflow:hidden;margin-top:76px;background:var(--dark);color:#FFFFFF;text-align:center;padding:96px 0}
+.final::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 70% at 50% 100%,rgba(224,50,43,.22),rgba(224,50,43,0) 70%)}
+.final .wrap{position:relative;z-index:1}
+.final .kicker{color:var(--accent-on-dark)}
+.final h2{color:#FFFFFF;font-size:clamp(30px,3.8vw,48px);line-height:1.08;margin:0 0 14px}
+.final p{max-width:560px;margin:0 auto 30px;font-size:18px;line-height:1.55;color:#C6CDD0}
 
-footer{border-top:1px solid var(--line);padding:22px 20px 30px;text-align:center;font-size:13px;line-height:1.55;color:var(--muted)}
-footer p{max-width:820px;margin:0 auto 10px}
-footer a{color:var(--muted)}
+footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.08);padding:26px 20px 34px;text-align:center;font-size:13px;line-height:1.6;color:#7F898D}
+footer p{max-width:820px;margin:0 auto 8px}
+footer a{color:#9AA3A7}
 
-@media (max-width:820px){
-  .math{flex-direction:column;max-width:440px}
-  .op{margin:-4px 0}
+@media (max-width:860px){
+  .stats{grid-template-columns:1fr;max-width:420px;padding-top:6px}
+  .stats div{padding:16px 0}
+  .stats div+div{border-left:0;border-top:1px solid rgba(255,255,255,.1)}
+  .eq{grid-template-columns:1fr;max-width:460px}
+  .op{padding:0;margin:-6px 0;line-height:1}
+  .op.arr{transform:rotate(90deg)}
+  .goal{border-left:0;border-top:1px solid #F6D9D6}
   .grid4{grid-template-columns:1fr}
 }
+@media (max-width:1000px){.wall{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.wall{grid-template-columns:1fr}}
 @media (max-width:480px){
-  .wrap{padding:0 16px}
-  .topbar{padding:18px}.topbar img{height:26px}
-  .hero{padding:30px 0 6px}
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  .hero{padding:24px 0 120px}
+  .logo{height:26px;margin-bottom:36px}
+  .eyebrow{font-size:10.5px;padding:7px 12px;letter-spacing:.03em;gap:8px;text-align:center}
+  .checks{flex-direction:column;align-items:flex-start;max-width:340px;gap:12px}
   .checks li{font-size:16px}
-  .apply{padding:22px 10px 12px;border-radius:14px}
-  .next{padding-top:48px}.steps{margin-top:48px;padding:48px 0}
+  .apply{margin:-86px 12px 0;padding:22px 10px 10px;border-radius:18px}
+  .next,.wins{padding-top:72px}
+  .steps{margin-top:72px;padding:72px 0}
+  .step{padding:22px}
+  .final{padding:72px 0}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 <!-- Microsoft Clarity (heatmaps + session recordings) -->
 <script type="text/javascript">
@@ -136,36 +173,49 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
 </head>
 <body>
 
-<div class="strip">Bath company owners doing $100k+ a month only</div>
-<div class="topbar"><img src="buildsignals-horizontal-white.png" alt="BuildSignals" height="30"></div>
+<header class="hero">
+  <div class="wrap">
+    <img class="logo" src="buildsignals-horizontal-white.png" alt="BuildSignals" height="30">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Bath company owners doing $100k+ a month</p>
+    <h1>We Guarantee Your Bath Company <span class="a">$59,400 in Signed Jobs</span> in 90 Days.</h1>
+    <ul class="checks">
+      <li>$297 per sat appointment. We pay for the ads.</li>
+      <li>Every lead called in under 5 minutes.</li>
+      <li>One bath company per area, in writing.</li>
+    </ul>
+    <p class="terms">From your first 20 sits. If the jobs you sign from them come to less than $59,400 within 90 days, we add 10 more sits to your balance.</p>
+    <div class="stats">
+      <div><b>$264,025</b><span class="who">Valencia Construction Pros</span><span>closed since July</span></div>
+      <div><b>$145,751</b><span class="who">CaliFirst Remodel</span><span>closed in 30 days</span></div>
+      <div><b>$275,000</b><span class="who">MTR Baths</span><span>closed this year</span></div>
+    </div>
+  </div>
+</header>
 
 <main>
+  <section class="apply" id="apply">
+    <div class="apply-head">
+      <h2>Apply for the <span class="a">90-Day Appointment Program</span></h2>
+      <p>If it's a fit, you'll pick a time for a 15-minute call to check your area.</p>
+      <ol class="apply-steps">
+        <li><b>1</b> Answer a few quick questions</li>
+        <li><b>2</b> Pick a time</li>
+      </ol>
+    </div>
+    <!-- The iClosed form and calendar load here, with the ad's UTM parameters. -->
+    <div id="calmount"></div>
+  </section>
+
   <div class="wrap">
-    <section class="hero">
-      <h1>We Guarantee Your Bath Company <span class="a">$59,400 in Signed Jobs</span> in 90 Days.</h1>
-      <ul class="checks">
-        <li>Sat appointments on your reps' calendars for $297 each. We pay for the ads.</li>
-        <li>Every lead called in under 5 minutes and booked with every decision-maker home.</li>
-        <li>One bath company per area, in writing.</li>
-      </ul>
-      <p class="remedy">From your first 20 sits. If the jobs you sign from them come to less than $59,400 within 90 days, we add 10 more sits to your balance.</p>
-    </section>
-
-    <section class="apply card" id="apply">
-      <h2>Start your application for the <span class="a">90-Day Appointment Program</span></h2>
-      <p class="lead">Answer a few quick questions about your company. If it's a fit, pick a time for a 15-minute call to check your area.</p>
-      <!-- The iClosed form and calendar load here, with the ad's UTM parameters. -->
-      <div id="calmount"></div>
-    </section>
-
     <section class="next">
-      <h2>Your next <span class="a">90 days</span></h2>
-      <div class="math">
-        <div class="m card"><b>20</b><span>sat appointments on your reps' calendars</span></div>
+      <span class="kicker">Your next 90 days</span>
+      <h2 class="sec-h">The math behind the guarantee.</h2>
+      <div class="eq">
+        <div class="term"><b>20</b><span>sat appointments on your reps' calendars</span></div>
         <div class="op" aria-hidden="true">&times;</div>
-        <div class="m card"><b>$297</b><span>per sit, from a prepaid balance of $5,940</span></div>
-        <div class="op" aria-hidden="true">&rarr;</div>
-        <div class="m card goal"><b>$59,400+</b><span>in signed jobs, 10x what you paid, or 10 more sits on us</span></div>
+        <div class="term"><b>$297</b><span>per sit, from a prepaid balance of $5,940</span></div>
+        <div class="op arr" aria-hidden="true">&rarr;</div>
+        <div class="term goal"><b>$59,400+</b><span>in signed jobs, 10x what you paid, or 10 more sits on us</span></div>
       </div>
       <p class="fine">The guarantee counts signed contracts in your CRM from appointments we set, on your first 20 sits. It requires every appointment run within 48 hours and outcomes logged in your CRM every week. One per company. No contract: stop any time with 7 days' notice and we refund the sits you haven't used.</p>
       <a class="btn" href="#apply">See if my area is open</a>
@@ -175,29 +225,25 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
   <section class="steps">
     <div class="wrap center">
       <span class="kicker">The 90-Day Appointment Program</span>
-      <h2>The 4-step system that fills your reps' calendars.</h2>
+      <h2 class="sec-h">The 4-step system that fills your reps' calendars.</h2>
       <div class="grid4">
-        <div class="step card">
-          <span class="num">1</span>
-          <small>Step 1</small>
+        <div class="step">
+          <div class="step-top"><span class="num">1</span><small>Step 1</small></div>
           <h3>Lock in your area</h3>
           <p>On a 15-minute call we check your area. If it's open, it's yours: one bath company per area, in writing. We connect to your CRM for free, or build you one for $1,500.</p>
         </div>
-        <div class="step card">
-          <span class="num">2</span>
-          <small>Step 2</small>
+        <div class="step">
+          <div class="step-top"><span class="num">2</span><small>Step 2</small></div>
           <h3>Ads for your company alone</h3>
           <p>We write, launch and pay for Facebook and Instagram ads in your area, for your company only. Appointments can start as soon as the next day.</p>
         </div>
-        <div class="step card">
-          <span class="num">3</span>
-          <small>Step 3</small>
+        <div class="step">
+          <div class="step-top"><span class="num">3</span><small>Step 3</small></div>
           <h3>Every lead called in under 5 minutes</h3>
           <p>Our setters call every homeowner fast, confirm the project and the budget, and book them on your reps' calendars with every decision-maker home. Every call is recorded and goes into your CRM.</p>
         </div>
-        <div class="step card">
-          <span class="num">4</span>
-          <small>Step 4</small>
+        <div class="step">
+          <div class="step-top"><span class="num">4</span><small>Step 4</small></div>
           <h3>Confirmed sits. Signed jobs.</h3>
           <p>We confirm every appointment the day before. Only real sits draw from your balance: no-shows and one-legs don't, and a bad sit flagged within 48 hours is on us.</p>
         </div>
@@ -208,48 +254,87 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
 
   <div class="wrap">
     <section class="wins">
-      <h2>Real wins from bath companies we work with.</h2>
-      <p class="sub">Straight from our clients' phones and pipelines. Homeowner names blurred.</p>
-      <div class="masonry">
-        <figure class="win">
-          <img src="/results-valencia-1%20(1).jpg" alt="Valencia Construction Pros: $44,000 in closed deals in 12 days" loading="lazy">
-          <figcaption><b>Valencia Construction Pros:</b> $44,000 closed in their first 12 days. $264,025 from 11 jobs since July.</figcaption>
-        </figure>
-        <figure class="win">
-          <img src="/califirst-crm-closed.jpg" alt="CaliFirst Remodel pipeline: Closed, 6 jobs, $106,551" loading="lazy">
-          <figcaption><b>CaliFirst Remodel:</b> 6 jobs, $106,551 closed.</figcaption>
-        </figure>
-        <figure class="win">
-          <img src="/mtr-baths-140k-month%20(1).jpg" alt="MTR Baths: over $140k this month" loading="lazy">
-          <figcaption><b>MTR Baths:</b> over $140,000 closed in one month, their biggest ever. $275,000 this year.</figcaption>
-        </figure>
-        <figure class="win">
-          <img src="/hflores-16k-first-deal%20(1).jpg" alt="H. Flores Construction: $16,000 job in 3 weeks" loading="lazy">
-          <figcaption><b>H. Flores Construction:</b> a $16,000 job in 3 weeks. $63,299 closed from 5 jobs since July.</figcaption>
-        </figure>
-        <figure class="win">
-          <img src="/califirst-crm-closed-billed.jpg" alt="CaliFirst Remodel pipeline: Closed and billed, 2 jobs, $39,200" loading="lazy">
-          <figcaption><b>CaliFirst Remodel:</b> 2 more, $39,200. $145,751 closed in 30 days.</figcaption>
-        </figure>
-        <figure class="win">
-          <img src="/mtr-baths-4-bathrooms-week%20(1).jpg" alt="MTR Baths: client closed 4 more bathrooms this week" loading="lazy">
-          <figcaption><b>MTR Baths:</b> 4 more bathrooms closed in one week.</figcaption>
-        </figure>
-        <figure class="win">
-          <img src="/results-contractor2-3%20(1).jpg" alt="Contractor 2.0: a $22,000 job closed in 10 days" loading="lazy">
-          <figcaption><b>Contractor 2.0:</b> first appointment 15 minutes after launch. A $22,000 job signed on day 10.</figcaption>
-        </figure>
+      <span class="kicker">The wins keep coming</span>
+      <h2 class="sec-h">Real wins from the remodelers we work with.</h2>
+      <p class="sub">Straight from our clients' phones, pipelines and calls. Homeowner names blurred.</p>
+      <div class="wall">
+        <div class="col">
+          <figure class="win">
+            <img src="/valencia-44k-texts.jpg" alt="Valencia Construction Pros: $44,000 in closed deals in 12 days" loading="lazy">
+            <figcaption><b>Valencia Construction Pros:</b> $44,000 closed in their first 12 days. $264,025 from 11 jobs since July.</figcaption>
+          </figure>
+          <figure class="win">
+            <img src="/call-hflores.jpg" alt="Leo Melaye on a call with Huver Flores, owner of H. Flores Construction" loading="lazy">
+            <figcaption><b>H. Flores Construction:</b> Leo with Huver Flores, the owner.</figcaption>
+          </figure>
+          <figure class="win">
+            <img src="/mtr-baths-4-bathrooms-week%20(1).jpg" alt="MTR Baths: client closed 4 more bathrooms this week" loading="lazy">
+            <figcaption><b>MTR Baths:</b> 4 more bathrooms closed in one week.</figcaption>
+          </figure>
+          <figure class="win">
+            <img src="/califirst-crm-closed-billed.jpg" alt="CaliFirst Remodel pipeline: Closed and billed, 2 jobs, $39,200" loading="lazy">
+            <figcaption><b>CaliFirst Remodel:</b> 2 more, $39,200. $145,751 closed in 30 days.</figcaption>
+          </figure>
+        </div>
+        <div class="col">
+          <figure class="win">
+            <img src="/hflores-6-appts-5-days.jpg" alt="H. Flores Construction: 6 appointments, $120k in scheduled value, in 5 days" loading="lazy">
+            <figcaption><b>H. Flores Construction:</b> 6 appointments and $120k scheduled in his first 5 days.</figcaption>
+          </figure>
+          <figure class="win">
+            <img src="/califirst-crm-closed.jpg" alt="CaliFirst Remodel pipeline: Closed, 6 jobs, $106,551" loading="lazy">
+            <figcaption><b>CaliFirst Remodel:</b> 6 jobs, $106,551 closed.</figcaption>
+          </figure>
+          <figure class="win">
+            <img src="/call-mcewin.jpg" alt="Leo Melaye on a call with Dillon McEwin of MTR Baths" loading="lazy">
+            <figcaption><b>MTR Baths:</b> Leo with Dillon McEwin.</figcaption>
+          </figure>
+          <figure class="win">
+            <img src="/hflores-16k-first-deal%20(1).jpg" alt="H. Flores Construction: $16,000 job in 3 weeks" loading="lazy">
+            <figcaption><b>H. Flores Construction:</b> a $16,000 job in 3 weeks. $63,299 closed from 5 jobs since July.</figcaption>
+          </figure>
+        </div>
+        <div class="col">
+          <figure class="win">
+            <img src="/mtr-baths-140k-month%20(1).jpg" alt="MTR Baths: over $140k this month" loading="lazy">
+            <figcaption><b>MTR Baths:</b> over $140,000 closed in one month, their biggest ever. $275,000 this year.</figcaption>
+          </figure>
+          <figure class="win">
+            <img src="/hflores-3-jobs-44k.jpg" alt="H. Flores Construction: 3 jobs and $44k in remodels in under 30 days" loading="lazy">
+            <figcaption><b>H. Flores Construction:</b> 3 jobs and $44,000 in remodels in under 30 days.</figcaption>
+          </figure>
+          <figure class="win">
+            <img src="/results-contractor2-2%20(1).jpg" alt="Contractor 2.0: second appointment in less than 12 hours" loading="lazy">
+            <figcaption><b>Contractor 2.0:</b> appointment #2 in under 12 hours.</figcaption>
+          </figure>
+        </div>
+        <div class="col">
+          <figure class="win">
+            <img src="/results-contractor2-1%20(1).jpg" alt="Contractor 2.0: first appointment 15 minutes after the ads went live" loading="lazy">
+            <figcaption><b>Contractor 2.0:</b> the first appointment came in 15 minutes after the ads went live.</figcaption>
+          </figure>
+          <figure class="win">
+            <img src="/call-esteban.jpg" alt="Leo Melaye on a call with Esteban Molina, owner of Contractor 2.0" loading="lazy">
+            <figcaption><b>Contractor 2.0:</b> Leo with Esteban Molina, the owner.</figcaption>
+          </figure>
+          <figure class="win">
+            <img src="/results-contractor2-3%20(1).jpg" alt="Contractor 2.0: a $22,000 job closed in 10 days" loading="lazy">
+            <figcaption><b>Contractor 2.0:</b> a $22,000 job signed on day 10.</figcaption>
+          </figure>
+        </div>
       </div>
       <a class="btn" href="#apply">Start my application</a>
     </section>
+  </div>
 
-    <section class="final card">
+  <section class="final">
+    <div class="wrap">
       <span class="kicker">Limited spots</span>
       <h2>One bath company per area.</h2>
       <p>Answer a few quick questions about your company. If it's a fit, you'll book a 15-minute call to check your area and map out your first 90 days.</p>
       <a class="btn" href="#apply">Start my application</a>
-    </section>
-  </div>
+    </div>
+  </section>
 </main>
 
 <footer>
