@@ -22,7 +22,9 @@ src="https://www.facebook.com/tr?id=2609465719513721&ev=PageView&noscript=1"
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- Ad landing page for the "$100k/mo" text ad (2026-11-25). Not for search.
      Nov 25 (Leo): 30 days instead of 90; client logos instead of the three result numbers; plain white page,
-     "like Gym Launch", not over-designed; on a phone the calendar shows without scrolling. -->
+     "like Gym Launch", not over-designed; on a phone the calendar shows without scrolling.
+     Later Nov 25: phones took ~20 s, so the logos went from 1.5 MB to 0.1 MB (/logos/*.webp) and the calendar
+     starts loading sooner; the headline is much bigger so the offer reads before the form. -->
 <meta name="robots" content="noindex">
 <title>The 30-Day Appointment Program for Bath Companies | BuildSignals</title>
 <meta name="description" content="For bath companies doing $100k+ a month. Sat appointments on your reps' calendars for $297 each, backed by our 10x guarantee.">
@@ -32,6 +34,8 @@ src="https://www.facebook.com/tr?id=2609465719513721&ev=PageView&noscript=1"
 <meta property="og:description" content="Sat appointments on your reps' calendars for $297 each, backed by our 10x guarantee. One bath company per area.">
 <meta property="og:url" content="https://apply.buildsignals.com/program">
 <meta name="theme-color" content="#FFFFFF">
+<!-- Open the connection to iClosed now, so the calendar starts loading sooner. -->
+<link rel="preconnect" href="https://app.iclosed.io">
 
 <style>
 :root{--ink:#111111;--body:#333333;--muted:#666666;--line:#E5E5E5;--accent:#E0322B;--accent-dark:#C4261F;--mark:#FFE36E}
@@ -49,12 +53,14 @@ h1,h2,h3{margin:0;color:var(--ink);font-weight:800;letter-spacing:-.02em}
 .btn:hover{background:var(--accent-dark)}
 .btn:focus-visible{outline:3px solid rgba(224,50,43,.4);outline-offset:3px}
 
-/* Top: logo, headline, one line of offer. Kept short so the calendar is on the first screen. */
-.top{text-align:center;padding:22px 0 18px}
-.logo{display:block;height:26px;width:auto;margin:0 auto 22px}
-.eyebrow{margin:0 0 10px;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-h1{font-size:clamp(27px,4.4vw,48px);line-height:1.12;max-width:900px;margin:0 auto}
-.sub{margin:12px auto 0;max-width:720px;font-size:18px;font-weight:600;color:var(--body)}
+/* Top: logo, client logos, then the promise. The headline is by far the biggest thing on the page, so a
+   visitor knows what they get before they see the form (Leo, Nov 25). Everything else up here stays small. */
+.top{text-align:center;padding:20px 0 18px}
+.logo{display:block;height:26px;width:auto;margin:0 auto 18px}
+.eyebrow{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(32px,5.4vw,60px);line-height:1.05;letter-spacing:-.03em;max-width:980px;margin:0 auto}
+h1 .mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.sub{margin:14px auto 0;max-width:640px;font-size:17px;font-weight:500;line-height:1.45;color:var(--body)}
 
 /* iClosed shows form and calendar side by side only when its frame is about 1000px wide or more,
    so the calendar block is 1000px inside on desktop. */
@@ -62,10 +68,11 @@ h1{font-size:clamp(27px,4.4vw,48px);line-height:1.12;max-width:900px;margin:0 au
 
 /* "Trusted by": client logos sliding, right under our logo at the top. */
 .trusted{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
-.marquee{overflow:hidden;margin:0 auto 20px;max-width:1000px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee{overflow:hidden;margin:0 auto 22px;max-width:1000px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .track{display:flex;align-items:center;gap:44px;width:max-content;animation:slide 52s linear infinite}
-.track img{height:28px;width:auto;filter:grayscale(1);opacity:.75}
-.track img.sq{height:46px}
+/* The files in /logos are trimmed, darkened where too light, and about 100 KB in all (the originals were 1.5 MB). */
+.track img{height:26px;width:auto;filter:grayscale(1);opacity:.75}
+.track img.sq{height:42px}
 .marquee:hover .track{animation-play-state:paused}
 @keyframes slide{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 
@@ -107,15 +114,15 @@ footer a{color:var(--muted)}
 @media (max-width:600px){
   body{font-size:16px}
   .wrap{padding:0 16px}
-  .top{padding:12px 0 10px}
-  .logo{height:22px;margin-bottom:10px}
+  .top{padding:12px 0 12px}
+  .logo{height:20px;margin-bottom:10px}
   .eyebrow{font-size:11px;letter-spacing:.02em;margin-bottom:6px}
-  h1{font-size:24px;line-height:1.15}
-  .sub{font-size:15px;margin-top:8px}
+  h1{font-size:min(34px,8.2vw);line-height:1.06} /* as big as fits in 3 lines: 32px on a 390px iPhone */
+  .sub{font-size:14px;margin-top:8px}
   .apply{padding:0 8px}
   .trusted{font-size:10px;margin-bottom:6px}
   .marquee{margin-bottom:12px}
-  .track img{height:20px}.track img.sq{height:32px}.track{gap:26px}
+  .track img{height:18px}.track img.sq{height:28px}.track{gap:24px}
   .checks li{font-size:16px}
   .math{font-size:16px}
 }
@@ -132,44 +139,44 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
 
 <header class="top">
   <div class="wrap">
-    <img class="logo" src="buildsignals-horizontal-dark.png" alt="BuildSignals" height="26">
-      <div class="trusted">Trusted by</div>
-      <div class="marquee" aria-label="Clients we have booked for">
-        <div class="track">
-        <img src="/valencia-logo.png" alt="Valencia Construction Pros" class="sq">
-        <img src="/califirst-logo-dark.png" alt="CaliFirst Remodel" class="sq">
-      <img src="/punch-list-logo.png" alt="Punch List Bath &amp; Home Remodeling">
-      <img src="/rws-logo.png" alt="RWS Building &amp; Remodeling" class="sq">
-      <img src="/sfl-builders-logo.png" alt="SFL Builders Group" class="sq">
-      <img src="/deluxe-lifecote-logo.png" alt="Deluxe LifeCote" class="sq">
-        <img src="/mtr-logo-dark.png" alt="MTR Baths">
-        <img src="/hflores-logo-dark.png" alt="H. Flores Construction" class="sq">
-        <img src="/contractor2.png" alt="Contractor 2.0">
-        <img src="/drh-logo.png" alt="DRH Construction Services" class="sq">
-        <img src="/watkinson-logo-dark.png" alt="Watkinson Construction">
-        <img src="/bath-by-tomorrow.png" alt="Bath By Tomorrow" class="sq">
-        <img src="/sakura-cucina.png" alt="Sakura Cucina" class="sq">
-        <img src="/dream-bath.png" alt="Dream Bath">
-        <img src="/first-priority-home-solutions.png" alt="First Priority Home Solutions">
-        <img src="/banner-logo-dark.png" alt="Banner LLC">
-        <img src="/valencia-logo.png" alt="" class="sq">
-        <img src="/califirst-logo-dark.png" alt="" class="sq">
-      <img src="/punch-list-logo.png" alt="">
-      <img src="/rws-logo.png" alt="" class="sq">
-      <img src="/sfl-builders-logo.png" alt="" class="sq">
-      <img src="/deluxe-lifecote-logo.png" alt="" class="sq">
-        <img src="/mtr-logo-dark.png" alt="">
-        <img src="/hflores-logo-dark.png" alt="" class="sq">
-        <img src="/contractor2.png" alt="">
-        <img src="/drh-logo.png" alt="" class="sq">
-        <img src="/watkinson-logo-dark.png" alt="">
-        <img src="/bath-by-tomorrow.png" alt="" class="sq">
-        <img src="/sakura-cucina.png" alt="" class="sq">
-        <img src="/dream-bath.png" alt="">
-        <img src="/first-priority-home-solutions.png" alt="">
-        <img src="/banner-logo-dark.png" alt="">
-        </div>
+    <img class="logo" src="/logos/buildsignals-dark.webp" alt="BuildSignals" width="614" height="78">
+    <div class="trusted">Trusted by</div>
+    <div class="marquee" aria-label="Clients we have booked for">
+      <div class="track">
+        <img src="/logos/valencia.webp" alt="Valencia Construction Pros" class="sq" width="101" height="92">
+        <img src="/logos/califirst.webp" alt="CaliFirst Remodel" class="sq" width="141" height="92">
+        <img src="/logos/punch-list.webp" alt="Punch List Bath &amp; Home Remodeling" width="224" height="56">
+        <img src="/logos/rws.webp" alt="RWS Building &amp; Remodeling" class="sq" width="107" height="92">
+        <img src="/logos/sfl-builders.webp" alt="SFL Builders Group" class="sq" width="137" height="92">
+        <img src="/logos/deluxe-lifecote.webp" alt="Deluxe LifeCote" class="sq" width="64" height="92">
+        <img src="/logos/mtr-baths.webp" alt="MTR Baths" width="187" height="53">
+        <img src="/logos/hflores.webp" alt="H. Flores Construction" class="sq" width="89" height="92">
+        <img src="/logos/contractor2.webp" alt="Contractor 2.0" class="sq" width="102" height="92">
+        <img src="/logos/drh.webp" alt="DRH Construction Services" class="sq" width="104" height="92">
+        <img src="/logos/watkinson.webp" alt="Watkinson Construction" width="125" height="56">
+        <img src="/logos/bath-by-tomorrow.webp" alt="Bath By Tomorrow" class="sq" width="92" height="92">
+        <img src="/logos/sakura-cucina.webp" alt="Sakura Cucina" class="sq" width="82" height="92">
+        <img src="/logos/dream-bath.webp" alt="Dream Bath" width="276" height="56">
+        <img src="/logos/first-priority.webp" alt="First Priority Home Solutions" width="104" height="56">
+        <img src="/logos/banner.webp" alt="Banner LLC" width="135" height="56">
+        <img src="/logos/valencia.webp" alt="" class="sq" width="101" height="92">
+        <img src="/logos/califirst.webp" alt="" class="sq" width="141" height="92">
+        <img src="/logos/punch-list.webp" alt="" width="224" height="56">
+        <img src="/logos/rws.webp" alt="" class="sq" width="107" height="92">
+        <img src="/logos/sfl-builders.webp" alt="" class="sq" width="137" height="92">
+        <img src="/logos/deluxe-lifecote.webp" alt="" class="sq" width="64" height="92">
+        <img src="/logos/mtr-baths.webp" alt="" width="187" height="53">
+        <img src="/logos/hflores.webp" alt="" class="sq" width="89" height="92">
+        <img src="/logos/contractor2.webp" alt="" class="sq" width="102" height="92">
+        <img src="/logos/drh.webp" alt="" class="sq" width="104" height="92">
+        <img src="/logos/watkinson.webp" alt="" width="125" height="56">
+        <img src="/logos/bath-by-tomorrow.webp" alt="" class="sq" width="92" height="92">
+        <img src="/logos/sakura-cucina.webp" alt="" class="sq" width="82" height="92">
+        <img src="/logos/dream-bath.webp" alt="" width="276" height="56">
+        <img src="/logos/first-priority.webp" alt="" width="104" height="56">
+        <img src="/logos/banner.webp" alt="" width="135" height="56">
       </div>
+    </div>
     <p class="eyebrow">For bath company owners doing $100k+ a month</p>
     <h1>We Guarantee Your Bath Company <span class="mark">$59,400 in Signed Jobs</span> in 30 Days.</h1>
     <p class="sub">$297 per sat appointment. We pay for the ads. One bath company per area.</p>
@@ -180,6 +187,25 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
   <!-- The iClosed form and calendar load here, with the ad's UTM parameters. -->
   <section class="apply" id="apply">
     <div id="calmount"></div>
+    <script>
+    // The iClosed form and calendar start loading right here, before the rest of the page is read.
+    // The ad's UTM parameters are passed through so iClosed records where each booking came from.
+    (function(){
+      var mount=document.getElementById('calmount');
+      if(!mount || mount.querySelector('.iclosed-widget')) return;
+      var url='https://app.iclosed.io/e/buildsignals/strategy-call';
+      if(location.search && location.search.length>1) url+='?'+location.search.slice(1);
+      var w=document.createElement('div');
+      w.className='iclosed-widget'; w.setAttribute('data-url', url); w.setAttribute('title', 'Strategy call');
+      // Phones stack iClosed's form above its calendar, so give the frame room for both.
+      // iClosed then resizes the frame to its real height.
+      w.style.width='100%'; w.style.height=(window.innerWidth < 700 ? '880px' : '620px');
+      mount.appendChild(w);
+      var s=document.createElement('script'); s.async=true; s.src='https://app.iclosed.io/assets/widget.js';
+      try { s.fetchPriority='high'; } catch(e) {}
+      document.body.appendChild(s);
+    })();
+    </script>
   </section>
 
 
@@ -298,24 +324,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, documen
   <p>Client results shown are real, but they aren't typical, and yours will depend on your market, your sales team and your follow-up. The 10x guarantee terms are above. Not affiliated with or endorsed by Meta, Facebook or Instagram.</p>
   <p>BuildSignals · (213) 449-7226 · <a href="https://buildsignals.com/privacy.html">Privacy</a> · <a href="https://buildsignals.com/terms.html">Terms</a></p>
 </footer>
-
-<script>
-// The iClosed form and calendar load right away. The ad's UTM parameters are passed through
-// so iClosed records where each booking came from.
-(function(){
-  var mount=document.getElementById('calmount');
-  if(!mount || mount.querySelector('.iclosed-widget')) return;
-  var url='https://app.iclosed.io/e/buildsignals/strategy-call';
-  if(location.search && location.search.length>1) url+='?'+location.search.slice(1);
-  var w=document.createElement('div');
-  w.className='iclosed-widget'; w.setAttribute('data-url', url); w.setAttribute('title', 'Strategy call');
-  // Phones stack iClosed's form above its calendar, so give the frame room for both.
-  w.style.width='100%'; w.style.height=(window.innerWidth < 700 ? '880px' : '620px');
-  mount.appendChild(w);
-  var s=document.createElement('script'); s.type='text/javascript'; s.async=true; s.src='https://app.iclosed.io/assets/widget.js';
-  document.body.appendChild(s);
-})();
-</script>
 
 </body>
 </html>
